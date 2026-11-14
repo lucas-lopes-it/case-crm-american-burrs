@@ -2,7 +2,12 @@
 
 Para cada decisão: o que foi escolhido, as alternativas consideradas e o custo assumido.
 
+O status indica o que já está neste repositório. **Implementado** tem código e teste aqui;
+**fase 2** é a decisão tomada para a reconstrução completa, ainda sem código neste repositório.
+
 ## 1. n8n como orquestrador, regra de negócio em código próprio
+
+**Status:** fase 2.
 
 **Escolha:** o n8n cuida de agendamento, webhooks e roteamento, e só faz chamadas HTTP ao app.
 Farol, validação de kit, chamada ao Claude, validação com zod e fallback ficam em TypeScript,
@@ -20,6 +25,8 @@ de revisar em diff.
 
 ## 2. View materializada com refresh diário, não consulta em tempo real
 
+**Status:** fase 2.
+
 **Escolha:** `vw_farol_rfm` é uma view materializada, atualizada uma vez por dia pelo n8n com
 `REFRESH MATERIALIZED VIEW CONCURRENTLY`. A coluna `dt_referencia` mostra a data do cálculo.
 
@@ -34,6 +41,8 @@ fica velho sem aviso, e por isso `dt_referencia` aparece na tela.
 
 ## 3. CODPARC como chave de integração
 
+**Status:** fase 2.
+
 **Escolha:** o código do parceiro no ERP (`CODPARC`) é a chave da conta no CRM.
 
 **Alternativas**
@@ -42,10 +51,17 @@ fica velho sem aviso, e por isso `dt_referencia` aparece na tela.
 - ID próprio do CRM com tabela de-para. Desacopla os sistemas, mas é mais uma tabela para manter
   consistente.
 
+**Contexto do negócio:** quem decide a compra é o professor, que monta o kit a cada trimestre de
+aulas, e o cadastro no ERP pode estar no nome da faculdade ou do próprio professor. A conta do CRM
+segue o cadastro que existe, sem forçar um modelo único.
+
 **Custo assumido:** o CRM fica acoplado ao ERP. Um parceiro duplicado no Sankhya vira duas contas
-no CRM.
+no CRM. Quando o cadastro é da faculdade, vários professores dividem a mesma conta e o mesmo farol,
+e um professor ativo pode esconder outro que pulou o ciclo.
 
 ## 4. Front separado do ERP
+
+**Status:** fase 2.
 
 **Escolha:** o CRM e o app de kits são um app Next.js próprio. O ERP fica no schema `erp`,
 acessado com um role somente de leitura. O CRM fica no schema `crm`.
@@ -59,8 +75,10 @@ acessado com um role somente de leitura. O CRM fica no schema `crm`.
 
 ## 5. Regra do farol duplicada em SQL e TypeScript
 
+**Status:** implementado em TypeScript; lado SQL e teste de paridade na fase 2.
+
 **Escolha:** `erp.fn_farol(dias)` alimenta a view, e `classificarFarol(dias)` é usada no app.
-Um teste de integração compara as duas para 0 a 200 dias e para nulo.
+Na fase 2, um teste de integração compara as duas para 0 a 200 dias e para nulo.
 
 **Regra fiel ao SQL de produção:**
 
@@ -83,9 +101,16 @@ a Verde.
 tempo, com o teste de paridade atualizado. Fica registrada como proposta para discutir com o
 negócio, não como mudança da regra.
 
+**Leitura no ciclo trimestral:** as faixas acompanham o trimestre de aulas. Verde e Amarelo cobrem
+o trimestre em andamento, Vermelho é a janela antes do próximo kit e Preto indica que o professor
+pulou um ciclo. Por isso o briefing dispara nas duas cores: no Vermelho para antecipar o kit, no
+Preto para resgatar a conta.
+
 **Custo assumido:** duas implementações a manter. O teste de paridade cobre o risco de divergência.
 
 ## 6. Retry e fallback do briefing
+
+**Status:** implementado.
 
 **Escolha:** o SDK roda com `maxRetries: 0`, e o controle de tentativas é nosso: 1 chamada mais
 até 2 novas tentativas, com timeout por tentativa. Se todas falharem (erro de API, timeout ou
@@ -111,6 +136,8 @@ mandariam briefings bons para o fallback. Por isso ela fica no eval, e o vendedo
 
 ## 7. Revisão humana obrigatória
 
+**Status:** o briefing é gerado como texto para revisão, sem envio automático; o fluxo de aprovação e envio fica na fase 2.
+
 **Escolha:** todo briefing nasce como `rascunho`. Nada é enviado sem aprovação do vendedor.
 
 **Custo assumido:** um passo a mais para o vendedor, em troca de nunca mandar a um cliente um
@@ -118,12 +145,16 @@ texto que ninguém leu.
 
 ## 8. Dinheiro em centavos inteiros
 
+**Status:** implementado.
+
 **Escolha:** o TypeScript usa centavos inteiros e o SQL usa `numeric(14,2)`.
 
 **Custo assumido:** é preciso converter na borda, mas evita erro de ponto flutuante no custo
 por aluno.
 
 ## 9. SQL puro com `pg`, sem ORM
+
+**Status:** fase 2.
 
 **Escolha:** queries SQL explícitas.
 
@@ -133,6 +164,8 @@ por aluno.
 com Sankhya e Oracle.
 
 ## 10. Mock do WhatsApp com o contrato da Cloud API
+
+**Status:** fase 2.
 
 **Escolha:** o mock aceita `POST /v21.0/{phone-number-id}/messages`, exige `Authorization: Bearer`,
 valida o payload e responde no formato oficial, inclusive os erros.

@@ -8,7 +8,7 @@
  *   demais (NULL, 0, > 120)         -> Roxo (inativo/lead)
  *
  * Borda conhecida: quem comprou hoje (0 dias) cai em Roxo, como no original.
- * A mesma regra existe em SQL (erp.fn_farol); um teste de paridade compara as duas.
+ * A mesma regra vai existir em SQL (erp.fn_farol) na fase 2, com um teste de paridade entre as duas.
  */
 export const CORES_FAROL = ["VERDE", "AMARELO", "VERMELHO", "PRETO", "ROXO"] as const;
 export type CorFarol = (typeof CORES_FAROL)[number];
