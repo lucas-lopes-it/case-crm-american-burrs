@@ -9,7 +9,7 @@ export const MODELO_PADRAO = "claude-sonnet-5-5";
  * Adaptador da Claude API para o gerador de briefing.
  *
  * - A chave vem só do ambiente (ANTHROPIC_API_KEY); sem chave, devolve null e o gerador usa o template.
- * - maxRetries: 0 no SDK: quem conta as tentativas é o gerarBriefing (DECISOES.md, decisão 6).
+ * - maxRetries: 0 no SDK: quem conta as tentativas é o gerarBriefing (DECISOES.md, decisão A6).
  * - Saída estruturada com o schema de forma; as regras de texto são validadas no domínio.
  * - Recusa do modelo vira erro não-retentável: vai direto ao template.
  */

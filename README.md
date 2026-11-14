@@ -5,58 +5,104 @@
 > código, dados, credenciais nem informações de clientes** do ambiente real. Clientes, produtos,
 > pedidos, telefones e e-mails são fictícios. O ERP (Sankhya sobre Oracle) é simulado.
 
-## Situação
+Um produto que entrega ao vendedor a conta já lida, com a próxima ação e a mensagem prontas, no
+dia em que o cliente começa a esfriar. O vendedor não abre painel, não preenche CRM e não monta
+kit na planilha: revisa e envia.
 
-A American Burrs vende brocas odontológicas para o meio acadêmico. Quem decide a compra não é a
-instituição, é o professor: a cada trimestre de aulas ele monta o kit que a turma vai usar. O
-cadastro no ERP pode estar no nome da faculdade ou do próprio professor.
-
-O ERP já tinha um farol de clientes que classificava cada conta pelos dias desde a última compra.
-Ninguém consultava. O vendedor não gostava de preencher o CRM, e a empresa pagava duas
-ferramentas para o comercial: Ploomes como CRM e Mercos como força de vendas. Quando um professor
-deixava passar o trimestre sem pedido, ninguém percebia a tempo.
-
-## Decisão
-
-O problema não era falta de dado, era o dado estar longe de quem precisava dele. Em vez de pedir
-ao vendedor que abrisse o ERP, levei o farol para onde ele já trabalhava.
-
-As faixas do farol acompanham o ciclo trimestral de aulas, e foi isso que definiu onde a IA entra:
-
-| Farol | Dias sem compra | Leitura no ciclo trimestral | O que o sistema faz |
-|---|---|---|---|
-| Verde | 1 a 30 | trimestre em andamento | nada |
-| Amarelo | 31 a 60 | trimestre em andamento | nada |
-| Vermelho | 61 a 90 | janela antes do próximo kit | briefing de **antecipação** |
-| Preto | 91 a 120 | o professor pulou um ciclo | briefing de **resgate** |
-| Roxo | sem compra ou acima de 120 | inativo ou lead | nada |
-
-Quando a conta entra em Vermelho ou Preto, o Claude gera um briefing com a situação da conta, uma
-próxima ação, uma mensagem de WhatsApp e um e-mail, todos a partir dos dados do ERP. O vendedor
-revisa e envia em um clique.
-
-Três regras do negócio viraram guardrails do produto, verificados em código e não só pedidos no
-prompt:
-
-- **Nenhum número inventado.** Todo valor, data e quantidade precisa existir nos dados do ERP.
-- **Nenhuma promessa de desconto.** O vendedor não tem essa autonomia, então a IA também não tem.
-- **Nada sai sem revisão humana.** Todo briefing nasce como rascunho.
-
-Para validar rápido, comecei com um MVP no Agendor, uma plataforma pronta, escolhida para ganhar
-tempo de mercado, e construí as integrações do zero em vez de usar as pagas. Com a hipótese
-validada, levei CRM, funil e montagem de kit para o Bubble, integrando Agendor, Bubble, Sankhya e
-n8n.
+A história completa, em primeira pessoa, está em [docs/CASE.md](docs/CASE.md).
 
 ## Resultado
 
-- **Mais de 60% de redução de custo** com ferramentas comerciais: o Ploomes saiu e a montagem de
-  kit validou substituir também o Mercos, que era o item mais caro. Sobrou a licença do Bubble.
-- Briefing em produção, gerado pela Claude API e enviado em um clique por WhatsApp e e-mail.
+- **Mais de 60% de redução de custo** com ferramentas comerciais. Uma das duas licenças (CRM)
+  saiu, e a montagem de kit validou substituir também a outra (força de vendas), que era a mais cara.
+- **O farol passou a orientar a rotina do vendedor**, depois de anos no ERP sem ninguém consultar.
+- **O preenchimento manual acabou.** Cadastro e validação de kit passaram a ler o ERP.
+
+## O problema
+
+O ERP já classificava cada cliente por cor, conforme os dias desde a última compra. A informação
+estava certa e ninguém a usava. O vendedor não gostava de preencher o CRM, e oportunidades de
+recompra passavam sem que ele ou a diretoria percebessem.
+
+A leitura óbvia seria adesão: treinar, cobrar, fazer um painel melhor. O diagnóstico foi outro.
+O vendedor não precisava de mais informação, precisava de menos coisa para ler antes de agir.
+O farol estava certo e mesmo assim cobrava uma atenção que ele não tinha.
+
+## Para quem
+
+| Pessoa | O que faz | O que precisa do produto |
+|---|---|---|
+| **Vendedor** | Atende instituições e professores, monta e cadastra kits | Saber com quem falar hoje e já ter o que dizer |
+| **Professor** (quem decide) | Monta o kit de brocas da turma a cada trimestre de aulas | Ser procurado antes de fechar o próximo kit, sem pressão de desconto |
+| **Gestão comercial** | Acompanha carteira e custo da operação | Ver resgate e recompra sem depender de relatório manual |
+
+O cadastro no ERP pode estar no nome da faculdade ou do próprio professor. O produto segue o
+cadastro que existe, e o custo dessa escolha está registrado em
+[DECISOES.md](docs/DECISOES.md#a3-codparc-como-chave-de-integração).
+
+## A hipótese e como foi validada
+
+**Hipótese de maior risco:** o vendedor usaria a informação se ela chegasse pronta no lugar onde
+ele já trabalha, em vez de exigir que ele fosse buscá-la.
+
+**Teste:** antes de construir qualquer coisa própria, o fluxo rodou sobre uma plataforma de CRM
+pronta (Agendor), escolhida para ganhar tempo, com as integrações construídas do zero em vez de
+compradas. Só depois de ver o vendedor usando, CRM, funil e montagem de kit foram para uma
+aplicação própria em low-code (Bubble).
+
+## Decisões de produto
+
+| # | Decisão | Por quê |
+|---|---|---|
+| [P1](docs/DECISOES.md#p1-levar-o-dado-até-o-vendedor-em-vez-de-melhorar-o-painel) | Levar o dado até o vendedor em vez de melhorar o painel | O gargalo era atenção, não informação |
+| [P2](docs/DECISOES.md#p2-disparar-no-vermelho-para-antecipar-e-no-preto-para-resgatar) | Disparar no vermelho para antecipar e no preto para resgatar | As faixas do farol acompanham o ciclo trimestral do professor |
+| [P3](docs/DECISOES.md#p3-a-ia-redige-o-vendedor-decide) | A IA redige, o vendedor decide | Nenhum texto chega ao cliente sem alguém ler |
+| [P4](docs/DECISOES.md#p4-as-regras-do-negócio-viram-regras-do-produto) | As regras do negócio viram regras do produto | Só números do ERP, nenhuma promessa de desconto |
+| [P5](docs/DECISOES.md#p5-validar-em-plataforma-pronta-antes-de-construir) | Validar em plataforma pronta antes de construir | Testar a adoção antes de pagar o custo de construir |
+| [P6](docs/DECISOES.md#p6-a-regra-do-kit-mora-no-produto-não-na-cabeça-do-vendedor) | A regra do kit mora no produto, não na cabeça do vendedor | A montagem de kit não tinha regra |
+
+## O que ficou fora, de propósito
+
+- **Envio automático.** A IA não manda nada sozinha. O ganho de velocidade não compensava o risco
+  de uma mensagem errada para um professor.
+- **Desconto ou condição comercial.** O vendedor não tinha essa autonomia, então o produto também não.
+- **Score preditivo de churn.** A regra de dias sem compra já era entendida e aceita pelo comercial.
+  Trocar por um modelo opaco teria custado a confiança que o farol precisava ganhar.
+- **Tela dentro do ERP.** A experiência do vendedor ficaria presa ao ERP, que era justamente o problema.
+
+## Como o produto se mede
+
+| Métrica | O que responde | Status |
+|---|---|---|
+| Custo com ferramentas comerciais | O produto se paga? | **Medido em produção:** mais de 60% de redução |
+| Contas no vermelho que recompram no trimestre seguinte | A antecipação funciona? (métrica principal) | A instrumentar |
+| Tempo entre a conta entrar no vermelho e o primeiro contato | O vendedor age no dia certo? | A instrumentar |
+| Briefings enviados sem edição | O texto da IA serve como está? | A instrumentar: o rascunho já existe, falta comparar com o enviado |
+| Briefings que caíram no template | Com que frequência a IA falha? | **Implementado:** cada fallback gera evento com o motivo |
+| Briefings com número inventado ou desconto | O guardrail se sustenta? | **Medido no eval:** rubrica automática em 20 contas |
+
+A métrica principal é a recompra no trimestre seguinte porque é ela que liga o produto à receita.
+As outras explicam por que ela sobe ou não.
+
+## Roadmap
+
+**Agora (neste repositório):** regra do farol, validação de kit, geração do briefing com retry e
+fallback, eval com rubrica e histórico por versão de prompt.
+
+**Próximo**
+- Prompt v2 com tom diferente para antecipação (vermelho) e resgate (preto), comparado com o v1 no eval.
+- Fila do dia ordenada por valor dos últimos 12 meses, para o vendedor saber por onde começar.
+- Registro da diferença entre rascunho e texto enviado, para medir edição.
+
+**Depois**
+- ERP simulado em Postgres, orquestração no n8n, app de CRM e kits, mock do WhatsApp.
+- Mensagem de WhatsApp como template aprovado, porque cliente inativo está fora da janela de 24 horas
+  da API ([decisão A10](docs/DECISOES.md#a10-mock-do-whatsapp-com-o-contrato-da-cloud-api)).
 
 ## Tese
 
 IA em operação comercial funciona melhor quando é invisível: o vendedor não conversa com um
-chatbot, ele recebe o trabalho pronto no lugar onde já está, e as regras que o negócio impõe a ele
+chatbot, ele recebe o trabalho pronto no lugar onde já está. E as regras que o negócio impõe a ele
 valem também para o modelo.
 
 ## O que este repositório mostra
@@ -72,7 +118,8 @@ A reconstrução troca o Bubble por código, para que as regras fiquem testávei
 | Eval com rubrica automática e histórico por versão de prompt | `scripts/`, `evals/` | implementado |
 | ERP simulado em Postgres, app Next.js, workflows n8n, mock do WhatsApp | | fase 2 |
 
-O raciocínio por trás de cada escolha está em [docs/DECISOES.md](docs/DECISOES.md).
+Construído com um agente de código. Cada desvio dele do plano aprovado está registrado em
+[docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md), com a regra que passou a valer depois.
 
 ## Como rodar
 
@@ -105,6 +152,6 @@ Cada execução grava `evals/runs/<data>_<prompt>_<modelo>.json` e `.md` e acres
 
 ## Documentação
 
-- [docs/DECISOES.md](docs/DECISOES.md): decisões de arquitetura, alternativas e custos assumidos
-- [docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md): como supervisionei o agente de código, com cada
-  desvio do plano, como foi detectado e a regra que passou a valer
+- [docs/CASE.md](docs/CASE.md): a história do produto, em primeira pessoa
+- [docs/DECISOES.md](docs/DECISOES.md): decisões de produto e de arquitetura, com alternativas e custo assumido
+- [docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md): como supervisionei o agente de código

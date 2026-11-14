@@ -23,7 +23,7 @@ describe("classificarFarol: bordas da regra de produção", () => {
   });
 
   // Borda conhecida, fiel ao original: o SQL de produção usa "> 0 and <= 30",
-  // então quem comprou hoje cai em Roxo. Ver docs/DECISOES.md (decisão 5).
+  // então quem comprou hoje cai em Roxo. Ver docs/DECISOES.md (decisão A5).
   // Se a regra for corrigida um dia, este teste deve mudar junto com o SQL.
   it("BORDA CONHECIDA: comprou hoje (0 dias) -> ROXO, como em produção", () => {
     expect(classificarFarol(0)).toBe("ROXO");
