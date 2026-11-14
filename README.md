@@ -11,6 +11,8 @@ kit na planilha: revisa e envia.
 
 A história completa, em primeira pessoa, está em [docs/CASE.md](docs/CASE.md).
 
+![Farol de clientes com o briefing gerado para uma conta no vermelho](docs/img/farol.png)
+
 ## Resultado
 
 - **Mais de 60% de redução de custo** com ferramentas comerciais. Uma das duas licenças (CRM)
@@ -104,6 +106,18 @@ fallback, eval com rubrica e histórico por versão de prompt.
 IA em operação comercial funciona melhor quando é invisível: o vendedor não conversa com um
 chatbot, ele recebe o trabalho pronto no lugar onde já está. E as regras que o negócio impõe a ele
 valem também para o modelo.
+
+## A demonstração
+
+Uma versão navegável do produto, com dados fictícios, está em
+[docs/demo/funil.html](docs/demo/funil.html): baixe o arquivo e abra no navegador. Ela mostra a
+arquitetura, o funil de 5 etapas, a validação de kit e o farol com o briefing.
+
+| Validação do kit por turma | Como as peças conversam |
+|---|---|
+| ![Kit reprovado por mínimo de unidades e falta de estoque](docs/img/kits.png) | ![Arquitetura com ERP, CRM, app de kits, IA e canais de envio](docs/img/arq.png) |
+
+![Funil acadêmico de 5 etapas, do contato ao kit cadastrado](docs/img/funil.png)
 
 ## O que este repositório mostra
 
