@@ -9,7 +9,8 @@ Um produto que entrega ao vendedor a conta já lida, com a próxima ação e a m
 dia em que o cliente começa a esfriar. O vendedor não abre painel, não preenche CRM e não monta
 kit na planilha: revisa e envia.
 
-A história completa, em primeira pessoa, está em [docs/CASE.md](docs/CASE.md).
+Meu papel: AI Product Builder, com o produto de ponta a ponta, do discovery à adoção. A história
+completa, em primeira pessoa, está em [docs/CASE.md](docs/CASE.md), e o PRD em [docs/PRD.md](docs/PRD.md).
 
 ![Farol de clientes com o briefing gerado para uma conta no vermelho](docs/img/farol.png)
 
@@ -51,6 +52,15 @@ ele já trabalha, em vez de exigir que ele fosse buscá-la.
 pronta (Agendor), escolhida para ganhar tempo, com as integrações construídas do zero em vez de
 compradas. Só depois de ver o vendedor usando, CRM, funil e montagem de kit foram para uma
 aplicação própria em low-code (Bubble).
+
+## Como o produto evoluiu
+
+| Fase | O que entrou | O que validou |
+|---|---|---|
+| Discovery | Lean Inception | O professor como decisor e o ciclo trimestral |
+| MVP | Farol e briefing sobre um CRM de mercado, com integrações construídas do zero | Se o vendedor age sobre o briefing pronto |
+| Produto próprio | CRM, funil e montagem de kit numa aplicação própria em low-code | Que dava para tirar a licença do CRM e substituir a de força de vendas |
+| Reconstrução pública | Regras em código, testes e eval da IA, com dados fictícios | As regras do produto ficam testáveis e versionadas |
 
 ## Decisões de produto
 
@@ -167,5 +177,6 @@ Cada execução grava `evals/runs/<data>_<prompt>_<modelo>.json` e `.md` e acres
 ## Documentação
 
 - [docs/CASE.md](docs/CASE.md): a história do produto, em primeira pessoa
+- [docs/PRD.md](docs/PRD.md): problema, usuários, requisitos, métricas, fases e riscos
 - [docs/DECISOES.md](docs/DECISOES.md): decisões de produto e de arquitetura, com alternativas e custo assumido
 - [docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md): como supervisionei o agente de código
