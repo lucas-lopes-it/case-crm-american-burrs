@@ -1,0 +1,265 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}[hidden]{display:none!important}</style></head><body>
+<title>Funil Acadêmico American Burrs</title>
+<style>
+:root{
+  --bg:#F1F3F7; --surface:#FFFFFF; --surface-2:#E8ECF3; --fg:#121821; --muted:#586274; --line:#D3DAE5;
+  --accent:#2148C9; --accent-soft:#E2E8FA; --on-accent:#FFFFFF;
+  --f-verde:#1E8A4B; --f-amarelo:#B87A06; --f-vermelho:#C2332C; --f-preto:#181C23; --f-roxo:#7449BE; --on-farol:#FFFFFF;
+  --ok:#1E8A4B; --bad:#C2332C;
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 var(--body);padding-inline:16px;padding-block:20px 40px}
+.wrap{max-width:1280px;margin:0 auto;display:grid;gap:18px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:800}
+h2{font-size:1.2rem;font-weight:700}
+h3{font-size:.98rem;font-weight:700}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+button{font:600 .86rem var(--body);cursor:pointer;border-radius:8px;padding:.5rem .8rem;border:1px solid var(--line);background:var(--surface);color:var(--fg)}
+button.primary{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+select{font:500 .9rem var(--body);padding:.45rem .6rem;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--fg);max-width:100%}
+header.top{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between}
+.demo-note{font-size:.84rem;color:var(--muted);max-width:62ch}
+.demo-tag{display:inline-block;font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:.2rem .5rem;border-radius:4px;background:var(--accent-soft);color:var(--accent);margin-bottom:8px}
+.stack-line{display:flex;flex-wrap:wrap;gap:6px}
+.stack-line span{font:500 .74rem var(--mono);padding:.2rem .5rem;border:1px solid var(--line);border-radius:4px;color:var(--muted)}
+.shell{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;align-items:start}
+nav.tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1px solid var(--line);margin-bottom:16px}
+nav.tabs button{border:0;border-bottom:2px solid transparent;border-radius:0;background:none;padding:.6rem .8rem;color:var(--muted)}
+nav.tabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.section-head{display:flex;flex-wrap:wrap;gap:10px 16px;justify-content:space-between;align-items:end;margin-bottom:14px}
+.section-head p{margin:.25rem 0 0;font-size:.9rem;color:var(--muted);max-width:64ch}
+.btnrow{display:flex;flex-wrap:wrap;gap:8px}
+.arch{overflow-x:auto}
+.arch svg{width:100%;min-width:560px;height:auto;display:block}
+.arch .edge{stroke:var(--line);stroke-width:2;fill:none}
+.arch .edge.hot{stroke:var(--accent);stroke-dasharray:7 6}
+.arch .node rect{fill:var(--surface-2);stroke:var(--line);stroke-width:1.5}
+.arch .node.core rect{fill:var(--accent-soft);stroke:var(--accent)}
+.arch .node.hot rect{stroke:var(--accent);stroke-width:2.5}
+.arch .n-title{font:700 14px var(--display);fill:var(--fg)}
+.arch .n-sub{font:400 10.5px var(--mono);fill:var(--muted)}
+.arch-legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.arch-legend div{font-size:.88rem;color:var(--muted)}
+.arch-legend b{display:block;color:var(--fg);font-family:var(--display);margin-bottom:2px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px;overflow-x:auto;padding-bottom:6px}
+.col{background:var(--surface-2);border-radius:10px;padding:10px;display:flex;flex-direction:column;gap:8px;min-height:220px}
+.col-h{display:flex;justify-content:space-between;align-items:baseline;gap:6px;flex-wrap:wrap}
+.col-h h3{font-size:.86rem}
+.col-h .sys{font:500 .66rem var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px;display:grid;gap:6px;font-size:.84rem}
+.card .id{font:500 .72rem var(--mono);color:var(--muted)}
+.card b{font-weight:600}
+.card button{font-size:.78rem;padding:.35rem .6rem}
+.won{font:600 .72rem var(--mono);color:var(--ok)}
+.kit-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
+.list{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:.86rem}
+.row .meta{font:400 .74rem var(--mono);color:var(--muted)}
+.row .zero{color:var(--bad)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{padding:.15rem .5rem}
+.rules{display:grid;gap:6px;margin:12px 0;padding:0;list-style:none;font-size:.86rem}
+.rules li{display:flex;gap:8px;align-items:baseline}
+.rules .mark{font:600 .8rem var(--mono);width:1.2em}
+.rules .pass .mark{color:var(--ok)} .rules .fail .mark{color:var(--bad)}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.kpi{background:var(--surface-2);border-radius:8px;padding:8px 10px}
+.kpi .v{font:500 1rem var(--mono)}
+.kpi .l{font-size:.72rem;color:var(--muted)}
+.status-chip{display:inline-block;font:500 .72rem var(--mono);padding:.2rem .5rem;border-radius:4px;background:var(--surface-2);color:var(--muted)}
+.farol-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-bottom:14px}
+.fchip{display:grid;gap:2px;text-align:left;border:1px solid var(--line);border-left:6px solid var(--c);padding:8px 10px;border-radius:8px;background:var(--surface)}
+.fchip[aria-pressed="true"]{background:var(--surface-2);border-color:var(--c)}
+.fchip .n{font:500 1.3rem var(--mono)}
+.fchip .t{font-size:.76rem;color:var(--muted);font-weight:500}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;min-width:760px;font-size:.85rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font:500 .7rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2)}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr:last-child td{border-bottom:0}
+tr.changed td{background:var(--accent-soft)}
+.pill{display:inline-block;font:600 .72rem var(--body);padding:.2rem .55rem;border-radius:999px;color:var(--on-farol);background:var(--c);white-space:nowrap}
+.pill.preto{outline:1px solid var(--line)}
+td button{font-size:.76rem;padding:.3rem .55rem}
+.brief{margin-top:16px;border:1px solid var(--accent);border-radius:10px;padding:14px;background:var(--surface)}
+.brief .out{white-space:pre-wrap;font-size:.9rem;margin-top:10px;min-height:3em}
+.brief .note{font-size:.78rem;color:var(--muted);margin-top:8px}
+aside.log{background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;min-width:0}
+.log-h{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.live{display:inline-flex;align-items:center;gap:6px;font:500 .72rem var(--mono);color:var(--ok)}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.log-list{list-style:none;margin:0;padding:6px 0;overflow:hidden;max-height:760px;font:400 .76rem/1.45 var(--mono)}
+.log-list li{padding:7px 16px;border-bottom:1px dashed var(--line);display:grid;gap:2px}
+.log-list .route{color:var(--accent);font-weight:500}
+.log-list .t{color:var(--muted)}
+</style>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <span class="demo-tag">Demonstração · dados fictícios</span>
+      <h1>Funil Acadêmico American Burrs</h1>
+      <p class="demo-note">Reconstrução funcional do ecossistema comercial implantado na American Burrs. Os clientes, kits e pedidos abaixo são fictícios; a lógica de integração, o funil de 5 etapas e o Farol de Churn seguem o desenho em produção.</p>
+    </div>
+    <div class="stack-line"><span>Sankhya ERP</span><span>Oracle SQL</span><span>n8n</span><span>Agendor</span><span>Bubble</span><span>Claude API</span><span>WhatsApp API</span><span>E-mail SMTP</span></div>
+  </header>
+  <div class="shell">
+    <main>
+      <nav class="tabs">
+        <button aria-selected="true" data-tab="arq">Arquitetura</button>
+        <button aria-selected="false" data-tab="funil">Funil acadêmico</button>
+        <button aria-selected="false" data-tab="kits">App de kits</button>
+        <button aria-selected="false" data-tab="farol">Saúde da carteira</button>
+      </nav>
+      <section class="panel" id="view-arq">
+        <div class="section-head">
+          <div><h2>Como as peças conversam</h2>
+          <p>O Sankhya é a fonte de verdade. O n8n orquestra tudo: lê o ERP, alimenta o CRM, recebe os webhooks do app de kits e aciona o Claude quando uma conta entra em risco. As linhas acendem conforme os fluxos rodam.</p></div>
+          <button class="primary" id="btn-tour">Rodar um ciclo completo</button>
+        </div>
+        <div class="arch">
+          <svg viewBox="0 0 640 300">
+            <line class="edge" data-e="crm" x1="95" y1="56" x2="320" y2="150"/>
+            <line class="edge" data-e="app" x1="545" y1="56" x2="320" y2="150"/>
+            <line class="edge" data-e="erp" x1="95" y1="244" x2="320" y2="150"/>
+            <line class="edge" data-e="llm" x1="545" y1="244" x2="320" y2="150"/>
+            <line class="edge" data-e="wa" x1="95" y1="150" x2="320" y2="150"/>
+            <line class="edge" data-e="mail" x1="545" y1="150" x2="320" y2="150"/>
+            <g class="node" data-n="crm"><rect x="20" y="22" width="150" height="68" rx="10"/><text class="n-title" x="34" y="50">Agendor</text><text class="n-sub" x="34" y="70">CRM · MVP</text></g>
+            <g class="node" data-n="app"><rect x="470" y="22" width="150" height="68" rx="10"/><text class="n-title" x="484" y="50">Bubble</text><text class="n-sub" x="484" y="70">app de kits</text></g>
+            <g class="node core" data-n="n8n"><rect x="235" y="114" width="170" height="72" rx="10"/><text class="n-title" x="250" y="143">n8n</text><text class="n-sub" x="250" y="163">orquestrador</text></g>
+            <g class="node" data-n="erp"><rect x="20" y="210" width="150" height="68" rx="10"/><text class="n-title" x="34" y="238">Sankhya</text><text class="n-sub" x="34" y="258">ERP · view RFM</text></g>
+            <g class="node" data-n="llm"><rect x="470" y="210" width="150" height="68" rx="10"/><text class="n-title" x="484" y="238">Claude API</text><text class="n-sub" x="484" y="258">briefing de resgate</text></g>
+            <g class="node" data-n="wa"><rect x="20" y="118" width="150" height="64" rx="10"/><text class="n-title" x="34" y="146">WhatsApp API</text><text class="n-sub" x="34" y="166">envio em um clique</text></g>
+            <g class="node" data-n="mail"><rect x="470" y="118" width="150" height="64" rx="10"/><text class="n-title" x="484" y="146">E-mail</text><text class="n-sub" x="484" y="166">SMTP · envio</text></g>
+          </svg>
+        </div>
+        <div class="arch-legend">
+          <div><b>Sankhya</b>Cadastros, estoque, pedidos e faturamento. Uma view materializada calcula RFM e o Farol por CODPARC.</div>
+          <div><b>n8n</b>Sincronização diária ERP para CRM, webhooks de mudança de etapa e chamadas ao Claude.</div>
+          <div><b>Agendor (MVP)</b>Primeira entrega: onde o vendedor trabalha. Recebe farol, score e briefing como campos e notas do cliente. A versão final migrou o CRM, o funil e o app de kits para o Bubble; a lógica de integração é a mesma.</div>
+          <div><b>Bubble</b>Montagem e validação de kits fora do ERP, com regras de composição, estoque e teto por aluno.</div>
+          <div><b>WhatsApp e e-mail</b>O briefing do Claude vira mensagem pronta. Um clique no CRM aciona o n8n, que envia pela API do WhatsApp ou por e-mail e registra a atividade no Agendor.</div>
+        </div>
+      </section>
+      <section class="panel" id="view-funil" hidden>
+        <div class="section-head"><div><h2>Pipeline de 5 etapas</h2>
+          <p>Cada mudança de etapa dispara um webhook. O vendedor não sai do CRM; o kit é montado no app e o ganho é marcado automaticamente quando o ERP gera o pedido.</p></div>
+          <button id="btn-new-deal">Nova oportunidade</button></div>
+        <div class="board" id="board"></div>
+      </section>
+      <section class="panel" id="view-kits" hidden>
+        <div class="section-head"><div><h2>Montagem e validação de kits</h2>
+          <p>Catálogo lido do Sankhya com preço e estoque. As regras de validação rodam ao vivo; só um kit aprovado segue para cadastro no ERP.</p></div>
+          <label class="muted" style="display:grid;gap:4px;font-size:.8rem">Oportunidade <select id="kit-deal"></select></label></div>
+        <div class="kit-grid">
+          <div><p class="eyebrow" style="margin:0 0 8px">Catálogo Sankhya</p><div class="list" id="catalog"></div></div>
+          <div><p class="eyebrow" style="margin:0 0 8px">Kit por aluno <span id="kit-status" class="status-chip"></span></p>
+            <div class="list" id="kit-items"></div><div class="kpis" id="kit-kpis"></div><ul class="rules" id="kit-rules"></ul>
+            <div class="btnrow"><button id="btn-send-val">Enviar para validação</button><button class="primary" id="btn-validate">Validar e enviar ao ERP</button></div></div>
+        </div>
+      </section>
+      <section class="panel" id="view-farol" hidden>
+        <div class="section-head"><div><h2>Farol de Churn</h2>
+          <p>RFM calculado no Oracle sobre o faturamento do Sankhya e enviado ao CRM todo dia às 06:00. Contas em Vermelho ou Preto ganham um briefing de resgate gerado pelo Claude.</p></div>
+          <div class="btnrow"><button id="btn-days">Simular +15 dias</button><button class="primary" id="btn-sync">Rodar sincronização diária</button></div></div>
+        <div class="farol-strip" id="farol-strip"></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>CODPARC</th><th>Cliente</th><th>Tipo</th><th class="num">Dias s/ compra</th><th class="num">Pedidos 12m</th><th class="num">Fat. 12m</th><th>R·F·M</th><th>Farol</th><th></th></tr></thead>
+          <tbody id="farol-body"></tbody></table></div>
+        <div class="brief" id="brief" hidden>
+          <div class="section-head" style="margin:0"><div><p class="eyebrow" style="margin:0">Briefing de resgate</p><h3 id="brief-title"></h3></div><button>Fechar</button></div>
+          <div class="out" id="brief-out"></div>
+          <div class="btnrow" style="margin-top:12px"><button class="primary">Enviar por WhatsApp</button><button>Enviar por e-mail</button></div>
+        </div>
+      </section>
+    </main>
+    <aside class="log"><div class="log-h"><div><p class="eyebrow" style="margin:0 0 4px">n8n</p><h3>Execuções</h3></div><span class="live">ativo</span></div><ul class="log-list" id="log"></ul></aside>
+  </div>
+</div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const brl2=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const clients=[
+ {cod:10421,nome:'Centro Universitário Serra Azul',uf:'SC',tipo:'Instituição',dias:12,freq:11,valor:96400,ult:'Kit Dentística 3º período'},
+ {cod:10388,nome:'Faculdade Horizonte Sul',uf:'PR',tipo:'Instituição',dias:27,freq:8,valor:61200,ult:'Kit Prótese I'},
+ {cod:11877,nome:'Escola Técnica Bem Sorrir',uf:'SC',tipo:'Curso técnico',dias:19,freq:12,valor:15400,ult:'Pedras montadas PM 10'},
+ {cod:11502,nome:'Dental Campus Distribuidora',uf:'RS',tipo:'Distribuidor',dias:44,freq:9,valor:72800,ult:'Reposição diamantadas FG'},
+ {cod:10977,nome:'Universidade do Litoral Norte',uf:'SP',tipo:'Instituição',dias:58,freq:5,valor:38900,ult:'Kit Endodontia'},
+ {cod:11690,nome:'Faculdade Cerrado Vivo',uf:'MT',tipo:'Instituição',dias:66,freq:5,valor:33200,ult:'Kit Dentística 4º período'},
+ {cod:12014,nome:'Clínica Escola Vale Verde',uf:'MG',tipo:'Clínica escola',dias:71,freq:4,valor:21300,ult:'Carbide CA 557'},
+ {cod:11233,nome:'Instituto Odonto Planalto',uf:'GO',tipo:'Instituição',dias:83,freq:6,valor:44700,ult:'Kit Dentística 2º período'},
+ {cod:10655,nome:'Faculdade Atlântica de Saúde',uf:'BA',tipo:'Instituição',dias:97,freq:3,valor:18600,ult:'Kit Cirurgia'},
+ {cod:12290,nome:'OdontoMais Distribuidora',uf:'PE',tipo:'Distribuidor',dias:112,freq:7,valor:52100,ult:'Reposição carbide'},
+ {cod:10144,nome:'Centro Universitário Rio Claro Sul',uf:'SP',tipo:'Instituição',dias:136,freq:2,valor:9800,ult:'Kit Prótese I'},
+ {cod:12508,nome:'Faculdade Pampa Odontologia',uf:'RS',tipo:'Instituição',dias:0,freq:0,valor:0,ult:'Sem pedidos (lead)'}];
+const catalog=[
+ {sku:'AB-FG1012',nome:'Diamantada FG 1012 esférica',cat:'Diamantada',preco:9.8,est:4200},
+ {sku:'AB-FG2135',nome:'Diamantada FG 2135 cilíndrica',cat:'Diamantada',preco:10.4,est:3100},
+ {sku:'AB-FG3118',nome:'Diamantada FG 3118 chama',cat:'Diamantada',preco:11.2,est:2600},
+ {sku:'AB-FG4138',nome:'Diamantada FG 4138 tronco cônica',cat:'Diamantada',preco:11.9,est:0},
+ {sku:'AB-CA02',nome:'Carbide CA 2 esférica',cat:'Carbide',preco:14.5,est:1800},
+ {sku:'AB-CA557',nome:'Carbide CA 557 cilíndrica',cat:'Carbide',preco:15.2,est:1500},
+ {sku:'AB-ZEK23',nome:'Zekrya cirúrgica 23 mm',cat:'Carbide',preco:38.0,est:600},
+ {sku:'AB-PM10',nome:'Pedra montada PM 10',cat:'Acabamento',preco:6.9,est:2400},
+ {sku:'AB-DL12',nome:'Disco de lixa 12 mm (cx 50)',cat:'Acabamento',preco:24.0,est:900},
+ {sku:'AB-BRD24',nome:'Brocheiro autoclavável 24 furos',cat:'Organização',preco:42.0,est:700}];
+const skuMap=Object.fromEntries(catalog.map(p=>[p.sku,p]));
+const STAGES=[{nome:'Contato / Visita',sys:'Agendor'},{nome:'Montagem do Kit',sys:'Bubble'},{nome:'Validação do Kit',sys:'Bubble'},{nome:'Em Cadastro',sys:'Sankhya'},{nome:'Kit Cadastrado',sys:'Sankhya → Agendor'}];
+const validKit=[{sku:'AB-FG1012',q:2},{sku:'AB-FG2135',q:2},{sku:'AB-FG3118',q:2},{sku:'AB-CA02',q:2},{sku:'AB-CA557',q:1},{sku:'AB-PM10',q:2},{sku:'AB-BRD24',q:1}];
+let deals=[
+ {id:'N-2041',cod:10421,turma:'Dentística II · 2027/1',alunos:64,teto:240,stage:0,kit:[]},
+ {id:'N-2044',cod:12508,turma:'Clínica Integrada · 2027/1',alunos:40,teto:220,stage:0,kit:[]},
+ {id:'N-2042',cod:10977,turma:'Endodontia · 2027/1',alunos:48,teto:180,stage:1,kit:[{sku:'AB-FG1012',q:2},{sku:'AB-FG4138',q:2},{sku:'AB-CA02',q:1}]},
+ {id:'N-2039',cod:10388,turma:'Prótese I · 2027/1',alunos:52,teto:200,stage:2,kit:validKit.map(x=>({...x}))},
+ {id:'N-2035',cod:11233,turma:'Dentística I · 2026/2',alunos:70,teto:190,stage:3,kit:validKit.map(x=>({...x}))},
+ {id:'N-2030',cod:11877,turma:'Técnico em Saúde Bucal · 2026/2',alunos:30,teto:160,stage:4,kit:[{sku:'AB-FG1012',q:3},{sku:'AB-CA02',q:2},{sku:'AB-PM10',q:3},{sku:'AB-DL12',q:1}],codprod:740318}];
+const cli=cod=>clients.find(c=>c.cod===cod);
+const FAROL={verde:{t:'Verde',d:'Ativo recente',c:'var(--f-verde)'},amarelo:{t:'Amarelo',d:'Atenção',c:'var(--f-amarelo)'},vermelho:{t:'Vermelho',d:'Risco',c:'var(--f-vermelho)'},preto:{t:'Preto',d:'Churn alto',c:'var(--f-preto)'},roxo:{t:'Roxo',d:'Inativo / lead',c:'var(--f-roxo)'}};
+function farol(d){if(d>0&&d<=30)return'verde';if(d>30&&d<=60)return'amarelo';if(d>60&&d<=90)return'vermelho';if(d>90&&d<=120)return'preto';return'roxo';}
+function rfm(c){const r=c.dias===0?1:c.dias<=30?5:c.dias<=60?4:c.dias<=90?3:c.dias<=120?2:1;const f=c.freq>=10?5:c.freq>=7?4:c.freq>=4?3:c.freq>=2?2:1;const m=c.valor>=80000?5:c.valor>=40000?4:c.valor>=20000?3:c.valor>=8000?2:1;return{r,f,m};}
+let synced=Object.fromEntries(clients.map(c=>[c.cod,farol(c.dias)]));let filter=null;
+function log(time,route,msg){const li=document.createElement('li');li.innerHTML=`<span><span class="t">${time}</span> <span class="route">${esc(route)}</span></span><span>${esc(msg)}</span>`;$('#log').prepend(li);}
+function show(tab){document.querySelectorAll('nav.tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===tab));['arq','funil','kits','farol'].forEach(t=>$('#view-'+t).hidden=t!==tab);}
+function kitCost(kit){return kit.reduce((s,i)=>s+skuMap[i.sku].preco*i.q,0);}
+function renderBoard(){$('#board').innerHTML=STAGES.map((s,i)=>{const ds=deals.filter(d=>d.stage===i);return`<div class="col"><div class="col-h"><h3>${i+1}. ${esc(s.nome)}</h3><span class="sys">${esc(s.sys)}</span></div>${ds.map(cardHTML).join('')||'<span class="muted" style="font-size:.8rem">Sem oportunidades</span>'}</div>`;}).join('');}
+function cardHTML(d){const c=cli(d.cod);let a='';if(d.stage===0)a='<button>Iniciar montagem</button>';if(d.stage===1||d.stage===2)a='<button>Abrir no app de kits</button>';if(d.stage===3)a='<button class="primary">Confirmar cadastro no ERP</button>';if(d.stage===4)a=`<span class="won">Ganho · CODPROD ${d.codprod}</span>`;const v=d.kit.length?`<span class="mono muted">${brl(kitCost(d.kit)*d.alunos)} · ${d.alunos} alunos</span>`:`<span class="mono muted">${d.alunos} alunos · teto ${brl(d.teto)}/aluno</span>`;return`<div class="card"><span class="id">${d.id} · CODPARC ${d.cod}</span><b>${esc(c.nome)}</b><span>${esc(d.turma)}</span>${v}${a}</div>`;}
+let kitId='N-2042';
+function rules(d){const units=d.kit.reduce((s,i)=>s+i.q,0);const cats=new Set(d.kit.map(i=>skuMap[i.sku].cat));const semEst=d.kit.filter(i=>skuMap[i.sku].est<i.q*d.alunos).map(i=>i.sku);const custo=kitCost(d.kit);return[{ok:units>=8,t:`Mínimo de 8 unidades por aluno (${units})`},{ok:cats.has('Diamantada')&&cats.has('Carbide'),t:'Inclui ao menos uma diamantada e uma carbide'},{ok:d.kit.length>0&&semEst.length===0,t:semEst.length?`Estoque insuficiente no Sankhya: ${semEst.join(', ')}`:'Estoque disponível no Sankhya para a turma inteira'},{ok:d.kit.length>0&&custo<=d.teto,t:`Custo por aluno dentro do teto da turma (${brl2(custo)} de ${brl(d.teto)})`}];}
+function renderKit(){const d=deals.find(x=>x.id===kitId);$('#kit-deal').innerHTML=`<option>${d.id} · ${esc(cli(d.cod).nome)}</option>`;$('#kit-status').textContent=STAGES[d.stage].nome;$('#catalog').innerHTML=catalog.map(p=>`<div class="row"><div><div>${esc(p.nome)}</div><div class="meta">${p.sku} · ${p.cat} · <span class="${p.est===0?'zero':''}">estoque ${p.est.toLocaleString('pt-BR')}</span></div></div><span class="mono">${brl2(p.preco)}</span><button>+</button></div>`).join('');$('#kit-items').innerHTML=d.kit.map(i=>{const p=skuMap[i.sku];return`<div class="row"><div><div>${esc(p.nome)}</div><div class="meta">${p.sku}</div></div><span class="mono">${brl2(p.preco*i.q)}</span><span class="qty"><button>−</button><span class="mono">${i.q}</span><button>+</button></span></div>`;}).join('');const c=kitCost(d.kit);$('#kit-kpis').innerHTML=`<div class="kpi"><div class="v">${brl2(c)}</div><div class="l">custo por aluno</div></div><div class="kpi"><div class="v">${d.alunos}</div><div class="l">alunos na turma</div></div><div class="kpi"><div class="v">${brl(c*d.alunos)}</div><div class="l">valor do negócio</div></div>`;$('#kit-rules').innerHTML=rules(d).map(r=>`<li class="${r.ok?'pass':'fail'}"><span class="mark">${r.ok?'✓':'✕'}</span><span>${esc(r.t)}</span></li>`).join('');$('#btn-validate').disabled=d.stage!==2;}
+function renderFarol(){const counts={verde:0,amarelo:0,vermelho:0,preto:0,roxo:0};clients.forEach(c=>counts[synced[c.cod]]++);$('#farol-strip').innerHTML=Object.entries(FAROL).map(([k,f])=>`<button class="fchip" style="--c:${f.c}" aria-pressed="${filter===k}"><span class="n">${counts[k]}</span><span class="t">${f.t} · ${f.d}</span></button>`).join('');const rows=clients.filter(c=>!filter||synced[c.cod]===filter).sort((a,b)=>b.dias-a.dias);$('#farol-body').innerHTML=rows.map(c=>{const k=synced[c.cod],f=FAROL[k],s=rfm(c);const risk=k==='vermelho'||k==='preto';return`<tr><td class="mono">${c.cod}</td><td>${esc(c.nome)} <span class="muted">· ${c.uf}</span></td><td>${esc(c.tipo)}</td><td class="num">${c.dias}</td><td class="num">${c.freq}</td><td class="num">${brl(c.valor)}</td><td class="mono">${s.r}·${s.f}·${s.m}</td><td><span class="pill ${k==='preto'?'preto':''}" style="--c:${f.c}">${f.t}</span></td><td>${risk?'<button>Gerar briefing</button>':''}</td></tr>`;}).join('');}
+function fallback(c){const s=rfm(c),f=FAROL[synced[c.cod]];return`Briefing:
+${c.nome} está há ${c.dias} dias sem comprar (farol ${f.t}). Com ${c.freq} pedidos e ${brl(c.valor)} em 12 meses, o histórico é relevante (RFM ${s.r}·${s.f}·${s.m}). A hipótese mais provável é que o kit do próximo trimestre ainda não esteja definido pelo professor ou que a compra tenha migrado para um concorrente na última cotação.
+
+Próxima ação:
+Ligar para o professor da disciplina até sexta, confirmar o calendário do próximo trimestre e oferecer a montagem do kit da turma no app, com validação de estoque garantida.
+
+WhatsApp:
+Olá, tudo bem? Estamos fechando os kits do próximo trimestre e lembrei de vocês. Como está a lista de material das turmas? Posso montar uma proposta já validada com estoque. Consegue falar 10 minutos esta semana?
+
+E-mail:
+Assunto: Lista de material do próximo trimestre
+Olá, tudo bem? Estamos organizando os kits acadêmicos do próximo trimestre e queria entender como está a lista de material das turmas de vocês. Na última compra fornecemos ${c.ult.toLowerCase()}. Podemos montar uma proposta já validada com estoque e dentro do valor por aluno que vocês definirem. Consegue 15 minutos esta semana para alinharmos?`;}
+function brief(cod){const c=cli(cod);$('#brief').hidden=false;$('#brief-title').textContent=`${c.nome} · CODPARC ${c.cod}`;$('#brief-out').textContent=fallback(c);}
+function hot(keys){keys.forEach(k=>document.querySelectorAll(`[data-e="${k}"],[data-n="${k}"]`).forEach(el=>el.classList.add('hot')));document.querySelector('[data-n="n8n"]').classList.add('hot');}
+const L=[['06:00:01','n8n','workflows ativos: Sync Farol RFM, Webhook Funil, Kits Bubble, Briefing Claude'],['06:00:02','Sankhya → n8n','12 parceiros e 10 SKUs carregados'],['06:00:04','n8n → Sankhya','REFRESH da view de RFM e leitura de parceiros'],['06:00:06','n8n → Agendor','farol e score atualizados em 12 organizações'],['06:00:09','n8n → Claude API','briefings gerados para contas em Vermelho e Preto'],['09:14:22','Agendor → n8n','vendedor clica em "Enviar WhatsApp" no briefing'],['09:14:23','n8n → WhatsApp API','mensagem enviada e atividade registrada no Agendor'],['10:02:40','Agendor → n8n','vendedor move oportunidade para Montagem do Kit'],['10:02:41','n8n → Bubble','rascunho de kit criado com catálogo do ERP'],['10:31:05','Bubble → n8n','kit validado: composição, estoque e teto por aluno'],['10:31:07','n8n → Sankhya','produto composto cadastrado e pedido gerado'],['10:31:08','n8n → Agendor','oportunidade marcada como ganha']];
+L.forEach(x=>log(...x));
+renderBoard();renderKit();renderFarol();
+window.scene=function(name){
+ if(name==='arq'){show('arq');hot(['erp','llm','crm','wa']);}
+ if(name==='farol'){show('farol');brief(11690);}
+ if(name==='kits'){show('kits');}
+ if(name==='funil'){show('funil');}
+};
+</script>
+</body></html>

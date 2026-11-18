@@ -1,5 +1,5 @@
 /**
- * Regra do farol, fiel ao SQL de produção (ver docs/DECISOES.md, decisão 5).
+ * Regra do farol, fiel ao SQL de produção (ver docs/DECISOES.md, decisão A5).
  *
  *   DIASULTIMACOMPRA > 0 and <= 30  -> Verde
  *   31 a 60                         -> Amarelo
@@ -8,7 +8,7 @@
  *   demais (NULL, 0, > 120)         -> Roxo (inativo/lead)
  *
  * Borda conhecida: quem comprou hoje (0 dias) cai em Roxo, como no original.
- * A mesma regra existe em SQL (erp.fn_farol); um teste de paridade compara as duas.
+ * A mesma regra vai existir em SQL (erp.fn_farol) na fase 2, com um teste de paridade entre as duas.
  */
 export const CORES_FAROL = ["VERDE", "AMARELO", "VERMELHO", "PRETO", "ROXO"] as const;
 export type CorFarol = (typeof CORES_FAROL)[number];

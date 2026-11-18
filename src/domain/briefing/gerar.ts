@@ -4,7 +4,7 @@ import { briefingTemplate } from "./template";
 import type { DadosConta } from "./tipos";
 
 /**
- * Geração do briefing com retry e fallback (DECISOES.md, decisão 6).
+ * Geração do briefing com retry e fallback (DECISOES.md, decisão A6).
  *
  * 1 chamada + no máximo 2 novas tentativas. Cada tentativa tem timeout próprio. Conta como falha:
  * erro da API, timeout ou saída que não passa no BriefingSchema. Erro não-retentável
