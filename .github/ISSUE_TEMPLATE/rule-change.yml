@@ -1,0 +1,29 @@
+name: Rule change proposal
+description: Suggest a change to a traffic light, kit or briefing rule
+labels: [rule]
+body:
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What the rule does today, with an example.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: effect
+    attributes:
+      label: Effect on the sales rep or the customer
+      description: What changes in practice and who needs to agree.
+    validations:
+      required: true
+  - type: textarea
+    id: cost
+    attributes:
+      label: Accepted cost
+      description: What is lost by adopting the proposal.

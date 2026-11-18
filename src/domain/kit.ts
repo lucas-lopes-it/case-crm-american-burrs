@@ -7,7 +7,7 @@
  *  - estoque disponível suficiente para a turma inteira (qtd por aluno x alunos);
  *  - custo por aluno dentro do teto informado.
  *
- * Dinheiro em centavos inteiros (DECISOES.md, decisão A8). Função pura: o preço e o estoque
+ * Dinheiro em centavos inteiros (docs/DECISIONS.md, decision A8). Função pura: o preço e o estoque
  * chegam já lidos do ERP.
  */
 import { formatarBRL } from "./formatar";

@@ -1,80 +1,83 @@
-# O farol que ninguém olhava
+# The traffic light nobody checked
 
-A história do produto em primeira pessoa. As decisões estão detalhadas em
-[DECISOES.md](DECISOES.md), e o código que reconstrói a lógica está neste repositório.
+The product story in first person. The decisions are detailed in [DECISIONS.md](DECISIONS.md), and
+the code that rebuilds the logic is in this repository.
 
-## O dado já existia
+## The data already existed
 
-Na American Burrs, indústria de brocas odontológicas que vende para o meio acadêmico, o ERP já
-classificava cada cliente por cor, conforme os dias desde a última compra. Verde, amarelo,
-vermelho, preto, roxo. O farol estava certo e ninguém o consultava. Ao mesmo tempo, o vendedor não
-gostava de preencher o CRM, e a empresa pagava duas ferramentas comerciais para guardar um dado
-que chegava incompleto.
+At American Burrs, a manufacturer of dental burs that sells to dental schools, the ERP already
+classified each customer by color, based on days since the last purchase. Green, yellow, red,
+black, purple. The traffic light was right and nobody checked it. At the same time, reps didn't
+like filling in the CRM, and the company was paying for two commercial tools to store data that
+arrived incomplete.
 
-Quando assumi a transformação digital, a leitura óbvia era de adesão: treinar, cobrar, criar um
-painel melhor. Levei um tempo para ver que o problema era outro. Nenhum vendedor precisava de mais
-informação. Faltava a ele tempo para olhar a que já havia.
+When I took on the digital transformation, the obvious reading was adoption: train, enforce, build
+a better dashboard. It took me a while to see that the problem was something else. No rep needed
+more information. What they lacked was the time to look at the information that was already there.
 
-## O que Herbert Simon já tinha escrito em 1971
+## What Herbert Simon had already written in 1971
 
-Herbert Simon, que depois ganharia o Nobel de economia, descreveu esse problema numa palestra sobre
-como desenhar organizações num mundo rico em informação. A informação consome a atenção de quem a
-recebe, e por isso riqueza de informação gera pobreza de atenção.
+Herbert Simon, who would later win the Nobel Prize in economics, described this problem in a talk
+on how to design organizations for an information-rich world. Information consumes the attention of
+its recipients, and so a wealth of information creates a poverty of attention.
 
-A parte contraintuitiva vem logo depois. Para Simon, um sistema de informação só reduz a carga da
-organização se absorve mais informação do que produz. O objetivo não é entregar ao gestor tudo de
-que ele precisa, é reorganizar o ambiente para que ele gaste menos tempo recebendo.
+The counterintuitive part comes right after. For Simon, an information system only reduces the
+load on an organization if it absorbs more information than it produces. The goal is not to give
+the manager everything they need, but to rearrange the environment so they spend less time
+receiving.
 
-O farol fazia o contrário. Cada cor era mais uma coisa a abrir, interpretar e transformar em ação.
+The traffic light did the opposite. Each color was one more thing to open, interpret and turn into
+action.
 
-## Primeiro, entender o ciclo de quem compra
+## First, understand the buyer's cycle
 
-No discovery descobri que quem decide não é a faculdade, é o professor. A cada trimestre de aulas
-ele monta o kit de brocas da turma. Isso deu sentido às cores: verde e amarelo cobrem o trimestre
-em andamento, vermelho é a janela antes do próximo kit, preto é o professor que já pulou um ciclo.
+In discovery I found that the decision maker is not the school, it is the professor. Every academic
+term they build the bur kit for their class. That gave meaning to the colors: green and yellow
+cover the current term, red is the window before the next kit, black is the professor who has
+already skipped a cycle.
 
-Com isso, a pergunta mudou. Não era "como fazer o vendedor olhar o farol". Era "o que o vendedor
-precisa ter na mão no dia em que a conta entra no vermelho".
+With that, the question changed. It was no longer "how do we get the rep to look at the traffic
+light". It became "what does the rep need in hand on the day the account turns red".
 
-## A decisão: o sistema lê, o vendedor decide
+## The decision: the system reads, the rep decides
 
-O vendedor não iria até o dado. O dado iria até ele, já lido. O farol passou a ser sincronizado
-todo dia dentro do CRM. Quando uma conta entrava no vermelho ou no preto, a IA lia o histórico do
-ERP e entregava quatro coisas: a situação da conta, uma próxima ação, a mensagem de WhatsApp e o
-e-mail. O vendedor revisava e enviava em um clique.
+The rep wouldn't go to the data. The data would go to the rep, already read. The traffic light was
+synced daily into the CRM. When an account turned red or black, the AI read the ERP history and
+delivered four things: the account situation, a next action, the WhatsApp message and the email.
+The rep reviewed and sent in one click.
 
-As regras do negócio viraram regras do produto. A IA só podia citar números que estivessem no ERP.
-Não podia oferecer desconto, porque o vendedor também não tinha essa autonomia. E nada saía sem
-alguém ler. Ajustei o texto do briefing com o uso real, até ele soar como o vendedor.
+The business rules became product rules. The AI could only cite numbers that existed in the ERP. It
+could not offer discounts, because the rep didn't have that authority either. And nothing went out
+without someone reading it. I tuned the briefing text with real usage until it sounded like the rep.
 
-O mesmo raciocínio valeu para a montagem do kit. O app puxava preço e estoque do ERP e validava
-sozinho as regras da turma: mínimo de unidades por aluno, a combinação certa de tipos de broca,
-estoque para a turma inteira e teto de custo por aluno.
+The same reasoning applied to building kits. The app pulled price and stock from the ERP and
+validated the class rules on its own: minimum units per student, the right mix of bur types, stock
+for the whole class and a cost ceiling per student.
 
-## A ordem importou mais que a ferramenta
+## Order mattered more than tools
 
-Validei a hipótese primeiro numa plataforma de CRM pronta, para ganhar tempo, e construí as
-integrações do zero em vez de pagar pelas prontas. Só depois de ver o vendedor usando levei CRM,
-funil e montagem de kit para uma aplicação própria em low-code.
+I validated the hypothesis first on an off-the-shelf CRM, to save time, and built the integrations
+from scratch instead of paying for ready-made ones. Only after seeing reps use it did I move the
+CRM, pipeline and kit builder into our own low-code application.
 
-O resultado foi mais de 60% de redução de custo com ferramentas comerciais. Uma das duas licenças
-saiu, e a montagem de kit validou substituir também a outra, que era a mais cara. O farol passou a
-orientar a rotina do vendedor, e o preenchimento manual acabou.
+The result was over 60% reduction in commercial tool costs. One of the two licenses was dropped,
+and the kit builder validated replacing the other one too, which was the more expensive. The
+traffic light started to drive the rep's routine, and manual data entry ended.
 
-## A frase que eu levaria para qualquer reunião
+## The line I would take to any meeting
 
-Painel pede atenção. Briefing devolve atenção.
+Dashboards demand attention. Briefings give it back.
 
-A maior parte dos projetos de dados para força de vendas mede quanto dado chegou ao vendedor. Eu
-passei a desenhar pelo contrário: quanto ele deixou de ter que ler para agir.
+Most data projects for sales teams measure how much data reached the rep. I started designing the
+other way around: how much the rep no longer had to read in order to act.
 
-Depois que saí, reconstruí a lógica neste repositório, com dados fictícios, testes e uma avaliação
-automática do briefing em 20 contas. Construí com um agente de código e mantive um registro de cada
-desvio dele, como o dia em que mudou uma regra de produção sem pedir.
+After I left, I rebuilt the logic in this repository, with fictional data, tests and an automated
+evaluation of the briefing over 20 accounts. I built it with a coding agent and kept a record of
+each of its deviations, like the day it changed a production rule without asking.
 
-## O que não foi mérito meu
+## What was not my merit
 
-A regra mais importante do briefing não foi minha. Quem decidiu que o vendedor não dá desconto foi
-a empresa, muito antes de existir IA no processo. O produto só tratou essa decisão como fronteira,
-e talvez seja essa a parte que mais se transfere para outro lugar: antes de perguntar o que a IA
-consegue fazer, perguntar o que o negócio já decidiu que ninguém faz.
+The most important rule in the briefing was not mine. The company decided that reps don't give
+discounts long before there was any AI in the process. The product only treated that decision as a
+boundary, and perhaps that is the part that transfers best to other places: before asking what the
+AI can do, ask what the business has already decided nobody does.

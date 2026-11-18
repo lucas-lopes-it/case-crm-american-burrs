@@ -1,182 +1,216 @@
-# Farol de Clientes + CRM de Kits
+# Customer Health Traffic Light + Kit CRM
 
-> **Reconstrução para portfólio.** O sistema original rodou em produção na American Burrs
-> (indústria odontológica, vendas B2B para o meio acadêmico). Este repositório **não contém
-> código, dados, credenciais nem informações de clientes** do ambiente real. Clientes, produtos,
-> pedidos, telefones e e-mails são fictícios. O ERP (Sankhya sobre Oracle) é simulado.
+![The traffic light nobody checked: product case on AI for B2B sales](docs/img/capa.png)
 
-Um produto que entrega ao vendedor a conta já lida, com a próxima ação e a mensagem prontas, no
-dia em que o cliente começa a esfriar. O vendedor não abre painel, não preenche CRM e não monta
-kit na planilha: revisa e envia.
+> **Portfolio reconstruction.** The original system ran in production at American Burrs (dental
+> burs manufacturer, B2B sales to dental schools). This repository **contains no code, data,
+> credentials or customer information** from the real environment. Customers, products, orders,
+> phone numbers and emails are fictional. The ERP (Sankhya on Oracle) is simulated.
 
-Meu papel: AI Product Builder, com o produto de ponta a ponta, do discovery à adoção. A história
-completa, em primeira pessoa, está em [docs/CASE.md](docs/CASE.md), e o PRD em [docs/PRD.md](docs/PRD.md).
+A product that hands the sales rep an account that has already been read, with the next action and
+the message ready, on the day the customer starts to cool down. The rep doesn't open a dashboard,
+doesn't fill in the CRM and doesn't build kits in a spreadsheet: they review and send.
 
-![Farol de clientes com o briefing gerado para uma conta no vermelho](docs/img/farol.png)
+My role: AI Product Builder, owning the product end to end, from discovery to adoption. The full
+story, in first person, is in [docs/CASE.md](docs/CASE.md), and the PRD in [docs/PRD.md](docs/PRD.md).
 
-## Resultado
+![Customer traffic light with the briefing generated for an account in the red](docs/img/farol.png)
 
-- **Mais de 60% de redução de custo** com ferramentas comerciais. Uma das duas licenças (CRM)
-  saiu, e a montagem de kit validou substituir também a outra (força de vendas), que era a mais cara.
-- **O farol passou a orientar a rotina do vendedor**, depois de anos no ERP sem ninguém consultar.
-- **O preenchimento manual acabou.** Cadastro e validação de kit passaram a ler o ERP.
+## Outcome
 
-## O problema
+- **Over 60% reduction in commercial tool costs.** One of the two licenses (CRM) was dropped, and
+  the kit builder validated replacing the other one too (sales force automation), which was the
+  more expensive of the two.
+- **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
+  nobody checking it.
+- **Manual data entry ended.** Kit registration and validation now read straight from the ERP.
 
-O ERP já classificava cada cliente por cor, conforme os dias desde a última compra. A informação
-estava certa e ninguém a usava. O vendedor não gostava de preencher o CRM, e oportunidades de
-recompra passavam sem que ele ou a diretoria percebessem.
+## The problem
 
-A leitura óbvia seria adesão: treinar, cobrar, fazer um painel melhor. O diagnóstico foi outro.
-O vendedor não precisava de mais informação, precisava de menos coisa para ler antes de agir.
-O farol estava certo e mesmo assim cobrava uma atenção que ele não tinha.
+The ERP already classified every customer by color, based on days since the last purchase. The
+information was right and nobody used it. Reps didn't like filling in the CRM, and repurchase
+opportunities slipped by without the rep or the leadership noticing.
 
-## Para quem
+The obvious reading was adoption: train, enforce, build a better dashboard. The diagnosis was
+different. The rep didn't need more information, they needed less to read before acting. The
+traffic light was right and still demanded attention the rep didn't have.
 
-| Pessoa | O que faz | O que precisa do produto |
+## Who it is for
+
+| Person | What they do | What they need from the product |
 |---|---|---|
-| **Vendedor** | Atende instituições e professores, monta e cadastra kits | Saber com quem falar hoje e já ter o que dizer |
-| **Professor** (quem decide) | Monta o kit de brocas da turma a cada trimestre de aulas | Ser procurado antes de fechar o próximo kit, sem pressão de desconto |
-| **Gestão comercial** | Acompanha carteira e custo da operação | Ver resgate e recompra sem depender de relatório manual |
+| **Sales rep** | Serves schools and professors, builds and registers kits | Know who to talk to today and already have something to say |
+| **Professor** (decision maker) | Builds the class's bur kit every academic term | Be contacted before closing the next kit, without discount pressure |
+| **Sales leadership** | Tracks the portfolio and the cost of the operation | See win-back and repurchase without manual reports |
 
-O cadastro no ERP pode estar no nome da faculdade ou do próprio professor. O produto segue o
-cadastro que existe, e o custo dessa escolha está registrado em
-[DECISOES.md](docs/DECISOES.md#a3-codparc-como-chave-de-integração).
+The ERP record can be under the school's name or the professor's own name. The product follows the
+record that exists, and the cost of that choice is recorded in
+[DECISIONS.md](docs/DECISIONS.md#a3-codparc-as-the-integration-key).
 
-## A hipótese e como foi validada
+## The hypothesis and how it was validated
 
-**Hipótese de maior risco:** o vendedor usaria a informação se ela chegasse pronta no lugar onde
-ele já trabalha, em vez de exigir que ele fosse buscá-la.
+**Riskiest hypothesis:** reps would use the information if it arrived ready, in the place where they
+already work, instead of requiring them to go and fetch it.
 
-**Teste:** antes de construir qualquer coisa própria, o fluxo rodou sobre uma plataforma de CRM
-pronta (Agendor), escolhida para ganhar tempo, com as integrações construídas do zero em vez de
-compradas. Só depois de ver o vendedor usando, CRM, funil e montagem de kit foram para uma
-aplicação própria em low-code (Bubble).
+**Test:** before building anything of our own, the flow ran on an off-the-shelf CRM (Agendor),
+chosen to save time, with integrations built from scratch instead of bought. Only after seeing reps
+use it did the CRM, pipeline and kit builder move to our own low-code application (Bubble).
 
-## Como o produto evoluiu
+## How the product evolved
 
-| Fase | O que entrou | O que validou |
+| Phase | What shipped | What it validated |
 |---|---|---|
-| Discovery | Lean Inception | O professor como decisor e o ciclo trimestral |
-| MVP | Farol e briefing sobre um CRM de mercado, com integrações construídas do zero | Se o vendedor age sobre o briefing pronto |
-| Produto próprio | CRM, funil e montagem de kit numa aplicação própria em low-code | Que dava para tirar a licença do CRM e substituir a de força de vendas |
-| Reconstrução pública | Regras em código, testes e eval da IA, com dados fictícios | As regras do produto ficam testáveis e versionadas |
+| Discovery | Lean Inception | The professor as decision maker and the term-based buying cycle |
+| MVP | Traffic light and briefing on top of a market CRM, with integrations built from scratch | Whether reps act on a ready-made briefing |
+| Own product | CRM, pipeline and kit builder in our own low-code application | That the CRM license could be dropped and the sales force tool replaced |
+| Public reconstruction | Rules in code, tests and AI evals, with fictional data | That the product rules are testable and versioned |
 
-## Decisões de produto
+## Product decisions
 
-| # | Decisão | Por quê |
+| # | Decision | Why |
 |---|---|---|
-| [P1](docs/DECISOES.md#p1-levar-o-dado-até-o-vendedor-em-vez-de-melhorar-o-painel) | Levar o dado até o vendedor em vez de melhorar o painel | O gargalo era atenção, não informação |
-| [P2](docs/DECISOES.md#p2-disparar-no-vermelho-para-antecipar-e-no-preto-para-resgatar) | Disparar no vermelho para antecipar e no preto para resgatar | As faixas do farol acompanham o ciclo trimestral do professor |
-| [P3](docs/DECISOES.md#p3-a-ia-redige-o-vendedor-decide) | A IA redige, o vendedor decide | Nenhum texto chega ao cliente sem alguém ler |
-| [P4](docs/DECISOES.md#p4-as-regras-do-negócio-viram-regras-do-produto) | As regras do negócio viram regras do produto | Só números do ERP, nenhuma promessa de desconto |
-| [P5](docs/DECISOES.md#p5-validar-em-plataforma-pronta-antes-de-construir) | Validar em plataforma pronta antes de construir | Testar a adoção antes de pagar o custo de construir |
-| [P6](docs/DECISOES.md#p6-a-regra-do-kit-mora-no-produto-não-na-cabeça-do-vendedor) | A regra do kit mora no produto, não na cabeça do vendedor | A montagem de kit não tinha regra |
+| [P1](docs/DECISIONS.md#p1-bring-the-data-to-the-rep-instead-of-improving-the-dashboard) | Bring the data to the rep instead of improving the dashboard | The bottleneck was attention, not information |
+| [P2](docs/DECISIONS.md#p2-trigger-on-red-to-anticipate-and-on-black-to-win-back) | Trigger on red to anticipate and on black to win back | The color bands follow the professor's academic term |
+| [P3](docs/DECISIONS.md#p3-the-ai-drafts-the-rep-decides) | The AI drafts, the rep decides | No text reaches a customer without someone reading it |
+| [P4](docs/DECISIONS.md#p4-business-rules-become-product-rules) | Business rules become product rules | ERP numbers only, no discount promises |
+| [P5](docs/DECISIONS.md#p5-validate-on-an-existing-platform-before-building) | Validate on an existing platform before building | Test adoption before paying the cost of building |
+| [P6](docs/DECISIONS.md#p6-the-kit-rule-lives-in-the-product-not-in-the-reps-head) | The kit rule lives in the product, not in the rep's head | Kit building had no rule |
 
-## O que ficou fora, de propósito
+## What was left out, on purpose
 
-- **Envio automático.** A IA não manda nada sozinha. O ganho de velocidade não compensava o risco
-  de uma mensagem errada para um professor.
-- **Desconto ou condição comercial.** O vendedor não tinha essa autonomia, então o produto também não.
-- **Score preditivo de churn.** A regra de dias sem compra já era entendida e aceita pelo comercial.
-  Trocar por um modelo opaco teria custado a confiança que o farol precisava ganhar.
-- **Tela dentro do ERP.** A experiência do vendedor ficaria presa ao ERP, que era justamente o problema.
+- **Automatic sending.** The AI sends nothing on its own. The speed gain didn't outweigh the risk
+  of a wrong message reaching a professor.
+- **Discounts or commercial terms.** Reps didn't have that authority, so the product doesn't either.
+- **Predictive churn score.** The days-since-last-purchase rule was already understood and accepted
+  by sales. Replacing it with an opaque model would have cost the trust the traffic light needed to
+  earn.
+- **Screens inside the ERP.** The rep's experience would stay trapped in the ERP, which was the
+  problem in the first place.
 
-## Como o produto se mede
+## How the product is measured
 
-| Métrica | O que responde | Status |
+| Metric | Question it answers | Status |
 |---|---|---|
-| Custo com ferramentas comerciais | O produto se paga? | **Medido em produção:** mais de 60% de redução |
-| Contas no vermelho que recompram no trimestre seguinte | A antecipação funciona? (métrica principal) | A instrumentar |
-| Tempo entre a conta entrar no vermelho e o primeiro contato | O vendedor age no dia certo? | A instrumentar |
-| Briefings enviados sem edição | O texto da IA serve como está? | A instrumentar: o rascunho já existe, falta comparar com o enviado |
-| Briefings que caíram no template | Com que frequência a IA falha? | **Implementado:** cada fallback gera evento com o motivo |
-| Briefings com número inventado ou desconto | O guardrail se sustenta? | **Medido no eval:** rubrica automática em 20 contas |
+| Commercial tool costs | Does the product pay for itself? | **Measured in production:** over 60% reduction |
+| Red accounts that repurchase in the following term | Does anticipation work? (north star) | To be instrumented |
+| Time between an account turning red and first contact | Does the rep act on the right day? | To be instrumented |
+| Briefings sent without edits | Does the AI text work as is? | To be instrumented: the draft exists, the comparison with the sent text is missing |
+| Briefings that fell back to the template | How often does the AI fail? | **Implemented:** every fallback emits an event with the reason |
+| Briefings with invented numbers or discounts | Does the guardrail hold? | **Measured in evals:** automated rubric over 20 accounts |
 
-A métrica principal é a recompra no trimestre seguinte porque é ela que liga o produto à receita.
-As outras explicam por que ela sobe ou não.
+Repurchase in the following term is the north star because it ties the product to revenue. The
+others explain why it moves or doesn't.
 
 ## Roadmap
 
-**Agora (neste repositório):** regra do farol, validação de kit, geração do briefing com retry e
-fallback, eval com rubrica e histórico por versão de prompt.
+The full version, by capability and with each sprint's status, is in
+[docs/product/roadmap.md](docs/product/roadmap.md).
 
-**Próximo**
-- Prompt v2 com tom diferente para antecipação (vermelho) e resgate (preto), comparado com o v1 no eval.
-- Fila do dia ordenada por valor dos últimos 12 meses, para o vendedor saber por onde começar.
-- Registro da diferença entre rascunho e texto enviado, para medir edição.
+**Now (in this repository):** traffic light rule, kit validation, briefing generation with retry
+and fallback, evals with a rubric and history per prompt version.
 
-**Depois**
-- ERP simulado em Postgres, orquestração no n8n, app de CRM e kits, mock do WhatsApp.
-- Mensagem de WhatsApp como template aprovado, porque cliente inativo está fora da janela de 24 horas
-  da API ([decisão A10](docs/DECISOES.md#a10-mock-do-whatsapp-com-o-contrato-da-cloud-api)).
+**Next**
+- Prompt v2 with a different tone for anticipation (red) and win-back (black), compared with v1 in
+  the evals.
+- Daily queue ranked by revenue over the last 12 months, so the rep knows where to start.
+- Recording the difference between the draft and the sent text, to measure edits.
 
-## Tese
+**Later**
+- ERP simulated in Postgres, orchestration in n8n, CRM and kit app, WhatsApp mock.
+- WhatsApp message as an approved template, because inactive customers fall outside the API's
+  24-hour window ([decision A10](docs/DECISIONS.md#a10-whatsapp-mock-with-the-cloud-api-contract)).
 
-IA em operação comercial funciona melhor quando é invisível: o vendedor não conversa com um
-chatbot, ele recebe o trabalho pronto no lugar onde já está. E as regras que o negócio impõe a ele
-valem também para o modelo.
+## Thesis
 
-## A demonstração
+AI in sales operations works best when it is invisible: the rep doesn't chat with a bot, they
+receive the work done in the place where they already are. And the rules the business imposes on
+the rep apply to the model too.
 
-Uma versão navegável do produto, com dados fictícios, está em
-[docs/demo/funil.html](docs/demo/funil.html): baixe o arquivo e abra no navegador. Ela mostra a
-arquitetura, o funil de 5 etapas, a validação de kit e o farol com o briefing.
+## The demo
 
-| Validação do kit por turma | Como as peças conversam |
+A clickable version of the product, with fictional data, is in
+[docs/demo/funil.html](docs/demo/funil.html): download the file and open it in a browser. It shows
+the architecture, the 5-stage pipeline, kit validation and the traffic light with the briefing. The
+demo and the screenshots keep the original Portuguese interface used by the Brazilian sales team.
+
+| Kit validation per class | How the pieces connect |
 |---|---|
-| ![Kit reprovado por mínimo de unidades e falta de estoque](docs/img/kits.png) | ![Arquitetura com ERP, CRM, app de kits, IA e canais de envio](docs/img/arq.png) |
+| ![Kit rejected for minimum units and missing stock](docs/img/kits.png) | ![Architecture with ERP, CRM, kit app, AI and delivery channels](docs/img/arq.png) |
 
-![Funil acadêmico de 5 etapas, do contato ao kit cadastrado](docs/img/funil.png)
+![5-stage academic pipeline, from first contact to registered kit](docs/img/funil.png)
 
-## O que este repositório mostra
+## What this repository shows
 
-A reconstrução troca o Bubble por código, para que as regras fiquem testáveis e versionadas.
+The reconstruction swaps Bubble for code, so the rules become testable and versioned.
 
-| Parte | Onde está | Status |
+| Part | Where | Status |
 |---|---|---|
-| Regra do farol, fiel ao SQL de produção | `src/domain/farol.ts` | implementado |
-| Validação do kit por turma (mínimo de unidades, tipos de broca, estoque, teto de custo) | `src/domain/kit.ts` | implementado |
-| Geração do briefing com retry, timeout e fallback determinístico | `src/domain/briefing/` | implementado |
-| Adaptador da Claude API com saída estruturada | `src/infra/anthropic.ts` | implementado |
-| Eval com rubrica automática e histórico por versão de prompt | `scripts/`, `evals/` | implementado |
-| ERP simulado em Postgres, app Next.js, workflows n8n, mock do WhatsApp | | fase 2 |
+| Traffic light rule, faithful to the production SQL | `src/domain/farol.ts` | implemented |
+| Kit validation per class (minimum units, bur types, stock, cost ceiling) | `src/domain/kit.ts` | implemented |
+| Briefing generation with retry, timeout and deterministic fallback | `src/domain/briefing/` | implemented |
+| Claude API adapter with structured output | `src/infra/anthropic.ts` | implemented |
+| Evals with an automated rubric and history per prompt version | `scripts/`, `evals/` | implemented |
+| ERP simulated in Postgres, Next.js app, n8n workflows, WhatsApp mock | | phase 2 |
 
-Construído com um agente de código. Cada desvio dele do plano aprovado está registrado em
-[docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md), com a regra que passou a valer depois.
+Code identifiers and the generated briefing stay in Portuguese, because the product serves a
+Brazilian sales team and Brazilian customers. The [glossary](docs/vision/glossary.md) maps each
+term.
 
-## Como rodar
+Built with a coding agent. Every deviation from the approved plan is recorded in
+[docs/AGENT_LOG.md](docs/AGENT_LOG.md), with the rule that applied from then on.
 
-Requer Node 22 ou superior. Nenhuma chave é necessária para os três primeiros comandos.
+## How to run
+
+Requires Node 22 or later. No API key is needed for the first three commands.
 
 ```bash
 npm install
-npm test                      # 72 testes: farol, kit, schema, fallback e rubrica
-npm run eval -- --mock        # 20 contas, cliente que segue as regras: aprovação de 100%
-npm run eval -- --mock=ruim   # mesmo eval com um cliente defeituoso: a rubrica reprova metade
+npm test                      # 72 tests: traffic light, kit, schema, fallback and rubric
+npm run eval -- --mock        # 20 accounts, client that follows the rules: 100% pass rate
+npm run eval -- --mock=ruim   # same eval with a faulty client: the rubric fails half of them
 ```
 
-Com `ANTHROPIC_API_KEY` no `.env`, `npm run eval` roda contra a Claude API real, e
-`npm run eval:compare` compara as duas execuções mais recentes, critério a critério.
+With `ANTHROPIC_API_KEY` in `.env`, `npm run eval` runs against the real Claude API, and
+`npm run eval:compare` compares the two most recent runs, criterion by criterion.
 
-## Avaliação do briefing
+## Briefing evals
 
-As 20 contas fictícias ficam em `evals/fixtures/contas.json`. A rubrica
-(`src/domain/briefing/rubrica.ts`) verifica:
+The 20 fictional accounts live in `evals/fixtures/contas.json`. The rubric
+(`src/domain/briefing/rubrica.ts`) checks:
 
-- o formato da saída;
-- se todos os números estão nos dados de entrada;
-- se o briefing cita os dias sem compra e o último pedido;
-- os limites de palavras do WhatsApp e do e-mail;
-- se o WhatsApp termina com uma única pergunta;
-- se não há promessa de desconto.
+- the output format;
+- whether every number appears in the input data;
+- whether the briefing mentions days without purchase and the last order;
+- the word limits for WhatsApp and email;
+- whether the WhatsApp message ends with a single question;
+- that there is no discount promise.
 
-Cada execução grava `evals/runs/<data>_<prompt>_<modelo>.json` e `.md` e acrescenta uma linha em
-`evals/historico.csv` com a versão e o hash do prompt, para comparar versões.
+Each run writes `evals/runs/<date>_<prompt>_<model>.json` and `.md` and appends a line to
+`evals/historico.csv` with the prompt version and hash, so versions can be compared.
 
-## Documentação
+## Documentation
 
-- [docs/CASE.md](docs/CASE.md): a história do produto, em primeira pessoa
-- [docs/PRD.md](docs/PRD.md): problema, usuários, requisitos, métricas, fases e riscos
-- [docs/DECISOES.md](docs/DECISOES.md): decisões de produto e de arquitetura, com alternativas e custo assumido
-- [docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md): como supervisionei o agente de código
+**The product**
+- [docs/CASE.md](docs/CASE.md): the product story, in first person
+- [docs/PRD.md](docs/PRD.md): problem, users, requirements, metrics, phases and risks
+- [docs/product/roadmap.md](docs/product/roadmap.md): roadmap by capability, with status and sprint
+
+**How I think**
+- [docs/vision/vision.md](docs/vision/vision.md): mission, problem and where the product is going
+- [docs/vision/manifesto.md](docs/vision/manifesto.md): what I believe about AI in operations
+- [docs/vision/principles.md](docs/vision/principles.md): the rules that break ties between decisions
+- [docs/vision/glossary.md](docs/vision/glossary.md): the domain terms
+
+**How I decide and learn**
+- [docs/DECISIONS.md](docs/DECISIONS.md): product and architecture decisions, with alternatives and accepted cost
+- [docs/sprints/](docs/sprints/README.md): review, retrospective and learning for each sprint
+- [docs/AGENT_LOG.md](docs/AGENT_LOG.md): how I supervised the coding agent
+
+## Contributing
+
+You don't need to write code to contribute. See [how to contribute](docs/contributing/contributing.md),
+the [Code of Conduct](CODE_OF_CONDUCT.md) and the [Security Policy](SECURITY.md).
+
+## License
+
+[MIT](LICENSE).
