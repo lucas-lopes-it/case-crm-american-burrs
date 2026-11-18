@@ -18,9 +18,9 @@ story, in first person, is in [docs/CASE.md](docs/CASE.md), and the PRD in [docs
 
 ## Outcome
 
-- **Over 60% reduction in commercial tool costs.** One of the two licenses (CRM) was dropped, and
-  the kit builder validated replacing the other one too (sales force automation), which was the
-  more expensive of the two.
+- **80% reduction in commercial tool costs at full rollout**, after over 60% at the MVP stage. One
+  of the two licenses (CRM) was dropped first, and the kit builder validated replacing the other one
+  too (sales force automation), which was the more expensive of the two.
 - **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
   nobody checking it.
 - **Manual data entry ended.** Kit registration and validation now read straight from the ERP.
@@ -91,7 +91,7 @@ use it did the CRM, pipeline and kit builder move to our own low-code applicatio
 
 | Metric | Question it answers | Status |
 |---|---|---|
-| Commercial tool costs | Does the product pay for itself? | **Measured in production:** over 60% reduction |
+| Commercial tool costs | Does the product pay for itself? | **Measured in production:** over 60% at the MVP stage, 80% at full rollout |
 | Red accounts that repurchase in the following term | Does anticipation work? (north star) | To be instrumented |
 | Time between an account turning red and first contact | Does the rep act on the right day? | To be instrumented |
 | Briefings sent without edits | Does the AI text work as is? | To be instrumented: the draft exists, the comparison with the sent text is missing |
@@ -149,8 +149,13 @@ The reconstruction swaps Bubble for code, so the rules become testable and versi
 | Kit validation per class (minimum units, bur types, stock, cost ceiling) | `src/domain/kit.ts` | implemented |
 | Briefing generation with retry, timeout and deterministic fallback | `src/domain/briefing/` | implemented |
 | Claude API adapter with structured output | `src/infra/anthropic.ts` | implemented |
+| Retrieval over the account history (RAG), as used in production | | not rebuilt: the account data goes straight into the prompt |
 | Evals with an automated rubric and history per prompt version | `scripts/`, `evals/` | implemented |
 | ERP simulated in Postgres, Next.js app, n8n workflows, WhatsApp mock | | phase 2 |
+
+In production, the briefing workflow used RAG over the account history to ground the text. The
+reconstruction keeps the same grounding rule in a simpler form: the account data from the ERP goes
+directly into the prompt, and the eval checks that every number in the output exists in that input.
 
 Code identifiers and the generated briefing stay in Portuguese, because the product serves a
 Brazilian sales team and Brazilian customers. The [glossary](docs/vision/glossary.md) maps each

@@ -60,8 +60,9 @@ I validated the hypothesis first on an off-the-shelf CRM, to save time, and buil
 from scratch instead of paying for ready-made ones. Only after seeing reps use it did I move the
 CRM, pipeline and kit builder into our own low-code application.
 
-The result was over 60% reduction in commercial tool costs. One of the two licenses was dropped,
-and the kit builder validated replacing the other one too, which was the more expensive. The
+The result was over 60% reduction in commercial tool costs at the MVP stage, and 80% at full
+rollout. One of the two licenses was dropped first, and the kit builder validated replacing the
+other one too, which was the more expensive. The
 traffic light started to drive the rep's routine, and manual data entry ended.
 
 ## The line I would take to any meeting
