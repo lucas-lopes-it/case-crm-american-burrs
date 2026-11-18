@@ -98,6 +98,9 @@ As outras explicam por que ela sobe ou não.
 
 ## Roadmap
 
+A versão completa, por capacidade e com o status de cada sprint, está em
+[docs/produto/roadmap.md](docs/produto/roadmap.md).
+
 **Agora (neste repositório):** regra do farol, validação de kit, geração do briefing com retry e
 fallback, eval com rubrica e histórico por versão de prompt.
 
@@ -176,7 +179,28 @@ Cada execução grava `evals/runs/<data>_<prompt>_<modelo>.json` e `.md` e acres
 
 ## Documentação
 
+**O produto**
 - [docs/CASE.md](docs/CASE.md): a história do produto, em primeira pessoa
 - [docs/PRD.md](docs/PRD.md): problema, usuários, requisitos, métricas, fases e riscos
+- [docs/produto/roadmap.md](docs/produto/roadmap.md): roadmap por capacidade, com status e sprint
+
+**Como eu penso**
+- [docs/visao/visao.md](docs/visao/visao.md): missão, problema e para onde o produto vai
+- [docs/visao/manifesto.md](docs/visao/manifesto.md): no que eu acredito sobre IA em operação
+- [docs/visao/principios.md](docs/visao/principios.md): as regras que desempatam decisões
+- [docs/visao/glossario.md](docs/visao/glossario.md): os termos do domínio
+
+**Como eu decido e aprendo**
 - [docs/DECISOES.md](docs/DECISOES.md): decisões de produto e de arquitetura, com alternativas e custo assumido
+- [docs/sprints/](docs/sprints/README.md): review, retrospectiva e aprendizado de cada sprint
 - [docs/LOG_DE_ERROS.md](docs/LOG_DE_ERROS.md): como supervisionei o agente de código
+
+## Contribuição
+
+Você não precisa escrever código para contribuir. Veja
+[como contribuir](docs/contribuicao/como-contribuir.md), o [Código de Conduta](CODE_OF_CONDUCT.md)
+e a [Política de Segurança](SECURITY.md).
+
+## Licença
+
+[MIT](LICENSE).

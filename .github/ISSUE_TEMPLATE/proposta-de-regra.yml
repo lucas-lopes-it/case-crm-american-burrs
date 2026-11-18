@@ -1,0 +1,29 @@
+name: Proposta de mudança de regra
+description: Sugerir mudança numa regra do farol, do kit ou do briefing
+labels: [regra]
+body:
+  - type: textarea
+    id: atual
+    attributes:
+      label: Comportamento atual
+      description: O que a regra faz hoje, com um exemplo.
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Comportamento proposto
+    validations:
+      required: true
+  - type: textarea
+    id: efeito
+    attributes:
+      label: Efeito para o vendedor ou para o cliente
+      description: O que muda na prática e quem precisa concordar.
+    validations:
+      required: true
+  - type: textarea
+    id: custo
+    attributes:
+      label: Custo assumido
+      description: O que se perde ao adotar a proposta.
