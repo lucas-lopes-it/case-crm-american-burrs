@@ -1,6 +1,6 @@
 # Farol de Clientes + CRM de Kits
 
-![O farol que ninguém olhava: case de produto de IA aplicada a vendas B2B](docs/img/capa.png)
+![The traffic light nobody checked: product case on AI for B2B sales](docs/img/capa.png)
 
 > **Reconstrução para portfólio.** O sistema original rodou em produção na American Burrs
 > (indústria odontológica, vendas B2B para o meio acadêmico). Este repositório **não contém
