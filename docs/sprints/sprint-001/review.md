@@ -1,55 +1,56 @@
 # Sprint 001: review
 
-> A regra de produção é o requisito. A reconstrução começa por ela.
+> The production rule is the requirement. The reconstruction starts there.
 
-## Objetivo
+## Goal
 
-Tirar as regras do produto de dentro de uma aplicação low-code e colocá-las em código testado, com
-dados fictícios, de modo que qualquer pessoa consiga rodar e verificar.
+Take the product rules out of a low-code application and put them into tested code, with fictional
+data, so anyone can run and verify them.
 
-## Histórias entregues
+## Stories shipped
 
-### 1. Estrutura da reconstrução
+### 1. Reconstruction structure
 
-- Projeto em TypeScript com Vitest, sem dependência de banco ou de chave de API para rodar os testes.
-- Separação entre domínio (`src/domain`), infraestrutura (`src/infra`) e avaliação (`src/eval`).
-- Aviso no topo do README: nenhum código, dado, credencial ou cliente do ambiente real.
+- TypeScript project with Vitest, with no database or API key needed to run the tests.
+- Separation between domain (`src/domain`), infrastructure (`src/infra`) and evaluation
+  (`src/eval`).
+- Notice at the top of the README: no code, data, credential or customer from the real environment.
 
-### 2. Regra do farol
+### 2. Traffic light rule
 
-- `classificarFarol(dias)` com as cinco faixas, fiel ao SQL de produção.
-- Testes de borda para cada limite de faixa, para nulo e para o dia 0.
-- A borda do dia 0 (quem comprou hoje cai em roxo) foi mantida e documentada na decisão A5.
+- `classificarFarol(dias)` with the five bands, faithful to the production SQL.
+- Edge tests for each band limit, for null and for day 0.
+- The day 0 edge (whoever bought today falls into purple) was kept and documented in decision A5.
 
-### 3. Validação do kit
+### 3. Kit validation
 
-- Validação por turma: mínimo de 8 unidades por aluno, ao menos uma broca diamantada e uma carbide,
-  estoque para a turma inteira e custo por aluno dentro do teto.
-- Dinheiro em centavos inteiros (decisão A8).
+- Validation per class: minimum of 8 units per student, at least one diamond bur and one carbide
+  bur, stock for the whole class and cost per student within the ceiling.
+- Money in integer cents (decision A8).
 
-### 4. Geração do briefing
+### 4. Briefing generation
 
-- Saída estruturada com schema de forma, e regras de texto validadas no domínio: limite de palavras,
-  pergunta única no WhatsApp e ausência de desconto.
-- Uma chamada mais até duas novas tentativas, com timeout por tentativa.
-- Erros que não mudam ao repetir vão direto ao template.
-- Template determinístico com os dados da conta, e evento registrado a cada fallback (decisão A6).
+- Structured output with a shape schema, and text rules validated in the domain: word limits, a
+  single question in WhatsApp and no discounts.
+- One call plus up to two retries, with a per-attempt timeout.
+- Errors that don't change on retry go straight to the template.
+- Deterministic template with the account data, and an event logged on every fallback (decision A6).
 
-### 5. Eval do briefing
+### 5. Briefing evals
 
-- 20 contas fictícias em `evals/fixtures/contas.json`.
-- Rubrica automática com seis critérios.
-- Dois clientes falsos: um que segue as regras e um com defeitos, para provar que a rubrica reprova.
-- Histórico por execução, com versão e hash do prompt, e comparação entre as duas últimas execuções.
+- 20 fictional accounts in `evals/fixtures/contas.json`.
+- Automated rubric with six criteria.
+- Two fake clients: one that follows the rules and one with defects, to prove the rubric fails them.
+- History per run, with prompt version and hash, and comparison between the last two runs.
 
-## Números
+## Numbers
 
-- 72 testes em 5 arquivos, todos passando.
-- Eval em mock bom: 100% de aprovação. Em mock ruim: a rubrica reprova metade.
-- 4 desvios do agente de código registrados em [LOG_DE_ERROS.md](../../LOG_DE_ERROS.md).
+- 72 tests in 5 files, all passing.
+- Evals with the good mock: 100% pass rate. With the bad mock: the rubric fails half.
+- 4 coding agent deviations recorded in [AGENT_LOG.md](../../AGENT_LOG.md).
 
-## O que ficou para depois
+## Left for later
 
-- Banco, orquestração, app e canais de envio (fase 2).
-- Seções de arquitetura e de roteiro de demo do README, ainda marcadas como em construção ao fim da
-  sprint.
+- Database, orchestration, app and delivery channels (phase 2).
+- The architecture and demo script sections of the README, still marked as under construction at
+  the end of the sprint.

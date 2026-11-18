@@ -1,22 +1,21 @@
-# Código de Conduta
+# Code of Conduct
 
-Este é um espaço para pessoas de produto, de operação e de tecnologia aprenderem umas com as
-outras.
+This is a space for product, operations and technology people to learn from each other.
 
-## O que se espera
+## What is expected
 
-- Respeito por quem está aprendendo, em qualquer nível de experiência.
-- Crítica dirigida à ideia, à decisão ou ao código, nunca à pessoa.
-- Discordância com argumento e, quando possível, com evidência.
-- Cuidado com dados: nada de informação real de empresa, cliente ou pessoa em exemplos.
+- Respect for people who are learning, at any level of experience.
+- Criticism aimed at the idea, the decision or the code, never at the person.
+- Disagreement with arguments and, when possible, with evidence.
+- Care with data: no real company, customer or personal information in examples.
 
-## O que não é aceito
+## What is not accepted
 
-- Assédio, ofensa ou discriminação de qualquer tipo.
-- Exposição de informação privada de terceiros.
-- Uso do espaço para divulgar algo sem relação com o projeto.
+- Harassment, insults or discrimination of any kind.
+- Exposing private information about third parties.
+- Using the space to promote anything unrelated to the project.
 
-## Como relatar
+## How to report
 
-Escreva para o mantenedor pelo [LinkedIn](https://www.linkedin.com/in/lucas-lopes-it). O relato é
-tratado com discrição.
+Write to the maintainer on [LinkedIn](https://www.linkedin.com/in/lucas-lopes-it). Reports are
+handled discreetly.

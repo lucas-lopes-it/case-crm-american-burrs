@@ -1,55 +1,53 @@
 # Sprint 002: review
 
-> O código mostrava como o produto funciona. Faltava mostrar por que ele existe.
+> The code showed how the product works. What was missing was why it exists.
 
-## Objetivo
+## Goal
 
-Reescrever a documentação na lente de produto: resultado primeiro, depois usuário, problema,
-hipótese, decisões, o que ficou fora e como se mede.
+Rewrite the documentation through a product lens: outcome first, then user, problem, hypothesis,
+decisions, what was left out and how it is measured.
 
-## Histórias entregues
+## Stories shipped
 
-### 1. README em formato de case
+### 1. README as a case
 
-- Abertura pelo resultado: mais de 60% de redução no custo com ferramentas comerciais.
-- Quadro de usuários (vendedor, professor, gestão comercial) com o que cada um precisa do produto.
-- Hipótese de maior risco e como foi validada antes de construir.
-- Tabela de evolução do produto: discovery, MVP, produto próprio e reconstrução.
-- Seção "o que ficou fora, de propósito".
-- Métricas com status: medido em produção, implementado, medido no eval ou a instrumentar.
+- Opens with the outcome: over 60% reduction in commercial tool costs.
+- User table (rep, professor, sales leadership) with what each one needs from the product.
+- Riskiest hypothesis and how it was validated before building.
+- Product evolution table: discovery, MVP, own product and reconstruction.
+- "What was left out, on purpose" section.
+- Metrics with status: measured in production, implemented, measured in evals or to be instrumented.
 
-### 2. Decisões de produto antes das de arquitetura
+### 2. Product decisions before architecture decisions
 
-- Seis decisões de produto (P1 a P6), tomadas no sistema original.
-- As dez decisões de arquitetura renumeradas como A1 a A10, cada uma com status: implementado ou
-  fase 2.
-- Referências no código atualizadas para a nova numeração.
+- Six product decisions (P1 to P6), made in the original system.
+- The ten architecture decisions renumbered A1 to A10, each with a status: implemented or phase 2.
+- References in the code updated to the new numbering.
 
-### 3. A história em primeira pessoa
+### 3. The story in first person
 
-- [CASE.md](../../CASE.md): o farol que ninguém olhava, com a leitura de Herbert Simon sobre
-  atenção como eixo do argumento.
+- [CASE.md](../../CASE.md): the traffic light nobody checked, with Herbert Simon's reading of
+  attention as the backbone of the argument.
 
 ### 4. PRD
 
-- [PRD.md](../../PRD.md): problema, usuários, objetivos, fora do escopo, doze requisitos, métricas,
-  fases, riscos e questões em aberto.
+- [PRD.md](../../PRD.md): problem, users, goals, out of scope, twelve requirements, metrics, phases,
+  risks and open questions.
 
-### 5. Demonstração navegável
+### 5. Clickable demo
 
-- `docs/demo/funil.html`: arquitetura, funil de 5 etapas, validação de kit e farol com briefing, em
-  um arquivo único com dados fictícios.
-- Quatro imagens do produto no README.
+- `docs/demo/funil.html`: architecture, 5-stage pipeline, kit validation and traffic light with
+  briefing, in a single file with fictional data.
+- Four product images in the README.
 
-## Números
+## Numbers
 
-- 5 documentos novos ou reescritos e 1 demonstração navegável.
-- 72 testes continuam passando. A única mudança de código foi a numeração das decisões nos
-  comentários.
-- Pull request 1 mesclado na `main` em 18/11/2026.
+- 5 new or rewritten documents and 1 clickable demo.
+- All 72 tests still pass. The only code change was the decision numbering in comments.
+- Pull request 1 merged into `main` on Nov 18, 2026.
 
-## O que ficou para depois
+## Left for later
 
-- Visão, princípios e glossário como documentos próprios.
-- Registro das sprints.
-- Licença, guia de contribuição e integração contínua.
+- Vision, principles and glossary as standalone documents.
+- Sprint records.
+- License, contributing guide and continuous integration.

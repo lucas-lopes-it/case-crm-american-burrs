@@ -1,15 +1,15 @@
-## Problema
+## Problem
 
-## Solução
+## Solution
 
-## O que muda para o vendedor
+## What changes for the sales rep
 
-## Como testar
+## How to test
 
-## Conferência
+## Checklist
 
-- [ ] Não inclui credencial, dado real de empresa ou dado pessoal.
-- [ ] `npm test` e `npm run typecheck` passam.
-- [ ] Se o briefing mudou, o eval em mock bom e em mock ruim foi executado.
-- [ ] Nenhuma regra de produção foi alterada sem issue que a aprove.
-- [ ] Decisão relevante registrada em `docs/DECISOES.md`.
+- [ ] No credentials, real company data or personal data.
+- [ ] `npm test` and `npm run typecheck` pass.
+- [ ] If the briefing changed, the evals ran with both the good and the bad mock.
+- [ ] No production rule changed without an approved issue.
+- [ ] Relevant decision recorded in `docs/DECISIONS.md`.

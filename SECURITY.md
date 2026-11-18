@@ -1,25 +1,26 @@
-# Política de Segurança
+# Security Policy
 
-## O que este repositório contém
+## What this repository contains
 
-Uma reconstrução com dados fictícios. Não há código, dado, credencial ou informação de cliente do
-ambiente de produção original. Clientes, produtos, pedidos, telefones e e-mails foram gerados para
-a demonstração.
+A reconstruction with fictional data. There is no code, data, credential or customer information
+from the original production environment. Customers, products, orders, phone numbers and emails
+were generated for the demo.
 
-## Segredos
+## Secrets
 
-- A única chave usada é `ANTHROPIC_API_KEY`, lida de um arquivo `.env` local que não vai para o git.
-- Os testes e o eval em modo mock rodam sem nenhuma chave.
-- Nunca inclua chave, token, documento interno ou dado pessoal em issue, pull request ou fixture.
+- The only key used is `ANTHROPIC_API_KEY`, read from a local `.env` file that is not committed.
+- The tests and the evals in mock mode run without any key.
+- Never include keys, tokens, internal documents or personal data in issues, pull requests or
+  fixtures.
 
-## Como relatar uma vulnerabilidade
+## How to report a vulnerability
 
-Use o relato privado do GitHub: aba **Security**, opção **Report a vulnerability**. Não abra issue
-pública para esse tipo de assunto.
+Use GitHub's private reporting: the **Security** tab, **Report a vulnerability**. Don't open a
+public issue for this kind of matter.
 
-Se você encontrar neste repositório algo que pareça dado real, relate pelo mesmo caminho. Esse é o
-tipo de falha mais grave que este projeto pode ter.
+If you find anything in this repository that looks like real data, report it the same way. That is
+the most serious kind of failure this project can have.
 
-## Versões
+## Versions
 
-Só a `main` recebe correção.
+Only `main` receives fixes.

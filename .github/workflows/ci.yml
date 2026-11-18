@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  verificar:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,5 +20,5 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
-      - name: Eval em mock (sem chave de API)
+      - name: Evals in mock mode (no API key)
         run: npm run eval -- --mock

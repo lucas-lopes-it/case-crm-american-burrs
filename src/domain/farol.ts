@@ -1,5 +1,5 @@
 /**
- * Regra do farol, fiel ao SQL de produção (ver docs/DECISOES.md, decisão A5).
+ * Regra do farol, fiel ao SQL de produção (see docs/DECISIONS.md, decision A5).
  *
  *   DIASULTIMACOMPRA > 0 and <= 30  -> Verde
  *   31 a 60                         -> Amarelo
