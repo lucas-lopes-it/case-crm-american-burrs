@@ -83,8 +83,9 @@ to our own application (Bubble).
 - Keep the existing tools and only integrate. Cheaper at first, but keeps both licenses and the
   manual data entry.
 
-**Result:** over 60% reduction in commercial tool costs. The CRM license was dropped, and the kit
-builder validated replacing the sales force tool as well, which was the more expensive one.
+**Result:** over 60% reduction in commercial tool costs at the MVP stage and 80% at full rollout.
+The CRM license was dropped first, and the kit builder validated replacing the sales force tool as
+well, which was the more expensive one.
 
 **Accepted cost:** a migration halfway through, from the MVP to our own application.
 
