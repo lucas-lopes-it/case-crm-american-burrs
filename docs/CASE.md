@@ -20,8 +20,7 @@ more information. What they lacked was the time to look at the information that 
 American Burrs' market strategy was to build loyalty with the dentist from university onward. In
 practice, that strategy reaches the sales rep as one question: does this school still buy from us
 this term? An account that stays active term after term is how the strategy shows up in the rep's
-day, which is why I treated retention of the academic account as the core of the product, not as a
-side feature of the CRM.
+day.
 
 ## What Herbert Simon had already written in 1971
 
@@ -40,9 +39,9 @@ action.
 ## First, understand the buyer's cycle
 
 In discovery, through Lean Inception workshops with the field team, we found that the decision maker
-is not the school, it is the professor. Every academic term they build the bur kit for their class. That gave meaning to the colors: green and yellow
-cover the current term, red is the window before the next kit, black is the professor who has
-already skipped a cycle.
+is not the school, it is the professor. Every academic term they build the bur kit for their class.
+That gave meaning to the colors: green and yellow cover the current term, red is the window before
+the next kit, black is the professor who has already skipped a cycle.
 
 With that, the question changed. It was no longer "how do we get the rep to look at the traffic
 light". It became "what does the rep need in hand on the day the account turns red".
@@ -71,8 +70,7 @@ the field team and adopted by the sales executives.
 
 The result was over 60% reduction in commercial tool costs at the MVP stage, and 80% at full
 rollout. One of the two licenses was dropped first, and the kit builder validated replacing the
-other one too, which was the more expensive. Both paid tools gave way to our own CRM and sales force
-application, where the rep builds the kit. The traffic light started to drive the rep's routine,
+other one too, which was the more expensive. The traffic light started to drive the rep's routine,
 and manual data entry ended. The north star I defined is repurchase in the following term, which is
 not instrumented yet.
 

@@ -7,13 +7,14 @@
 > credentials or customer information** from the real environment. Customers, products, orders,
 > phone numbers and emails are fictional. The ERP (Sankhya on Oracle) is simulated.
 
-A customer loyalty strategy for B2B sales in dental education. The company's market strategy was to
-build loyalty with the dentist from university onward, and the account that carries that strategy
-is the professor, who builds the class kit every academic term. The product keeps that account
-buying, term after term: it hands the sales rep an account that has already been read, with the
-next action and the message ready, on the day the customer starts to cool down. The rep doesn't
-open a dashboard, doesn't fill in the CRM and doesn't build kits in a spreadsheet: they review and
-send.
+A customer loyalty product for B2B sales in dental education. The company's market strategy was to
+build loyalty with the dentist from university onward, and the account that carries it is the
+professor, who builds the class kit every academic term.
+
+The product keeps that account buying, term after term. It hands the sales rep an account that has
+already been read, with the next action and the message ready, on the day the customer starts to
+cool down. The rep doesn't open a dashboard, doesn't fill in the CRM and doesn't build kits in a
+spreadsheet: they review and send.
 
 My role: Product Owner, owning the product end to end, from discovery to rollout and adoption, and
 AI Product Builder in this reconstruction. The full story, in first person, is in
@@ -25,8 +26,7 @@ AI Product Builder in this reconstruction. The full story, in first person, is i
 
 - **80% reduction in commercial tool costs at full rollout**, after over 60% at the MVP stage. One
   of the two licenses (CRM) was dropped first, and the kit builder validated replacing the other one
-  too (sales force automation), which was the more expensive of the two. Both paid tools were
-  replaced by our own CRM and sales force application, where the rep builds the kit.
+  too (sales force automation), which was the more expensive of the two.
 - **Adopted by the sales executives.** The product started in Lean Inception workshops with the
   field team and was built and validated with them.
 - **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
@@ -36,8 +36,8 @@ AI Product Builder in this reconstruction. The full story, in first person, is i
 ## The problem
 
 The ERP already segmented every customer by color, based on days since the last purchase (recency,
-the R of RFM). The information was right and nobody used it. Reps didn't like filling in the CRM, and repurchase
-opportunities slipped by without the rep or the leadership noticing.
+the R of RFM). The information was right and nobody used it. Reps didn't like filling in the CRM,
+and repurchase opportunities slipped by without the rep or the leadership noticing.
 
 The obvious reading was adoption: train, enforce, build a better dashboard. The diagnosis was
 different. The rep didn't need more information, they needed less to read before acting. The
