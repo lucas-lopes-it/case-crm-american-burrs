@@ -7,9 +7,10 @@
 > credentials or customer information** from the real environment. Customers, products, orders,
 > phone numbers and emails are fictional. The ERP (Sankhya on Oracle) is simulated.
 
-A customer loyalty product for B2B sales in dental education. The company's market strategy was to
-build loyalty with the dentist from university onward, and the account that carries it is the
-professor, who builds the class kit every academic term.
+A customer loyalty product for a dental burs manufacturer that sells B2B to dental schools,
+technical courses and dental distributors. The dentist is the end user the brand wants to win, and
+the company's market strategy was to start at university. The account that carries that strategy is
+the professor, who builds the class kit every academic term.
 
 The product keeps that account buying, term after term. It hands the sales rep an account that has
 already been read, with the next action and the message ready, on the day the customer starts to

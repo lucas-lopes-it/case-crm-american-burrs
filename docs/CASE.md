@@ -17,8 +17,9 @@ more information. What they lacked was the time to look at the information that 
 
 ## The bet behind the account
 
-American Burrs' market strategy was to build loyalty with the dentist from university onward. In
-practice, that strategy reaches the sales rep as one question: does this school still buy from us
+American Burrs is an industry: it sells B2B to schools, technical courses and dental distributors,
+and the dentist is the end user the brand wants to win. Its market strategy was to build loyalty
+with the dentist from university onward. In practice, that strategy reaches the sales rep as one question: does this school still buy from us
 this term? An account that stays active term after term is how the strategy shows up in the rep's
 day.
 
