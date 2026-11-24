@@ -3,14 +3,15 @@
 ![The traffic light nobody checked: product case on customer loyalty and retention](docs/img/capa.png)
 
 > **Portfolio reconstruction.** The original system ran in production at American Burrs (dental
-> burs manufacturer, B2B sales to dental schools). This repository **contains no code, data,
-> credentials or customer information** from the real environment. Customers, products, orders,
+> burs manufacturer that sells through dental distributors and builds academic kits with
+> professors). This repository **contains no code, data, credentials or customer information** from
+> the real environment. Customers, products, orders,
 > phone numbers and emails are fictional. The ERP (Sankhya on Oracle) is simulated.
 
-A customer loyalty product for a dental burs manufacturer that sells B2B to dental schools,
-technical courses and dental distributors. The dentist is the end user the brand wants to win, and
-the company's market strategy was to start at university. The account that carries that strategy is
-the professor, who builds the class kit every academic term.
+A customer loyalty product for a dental burs manufacturer that sells through dental distributors
+and builds academic kits with course professors. The dentist is the end user the brand wants to
+win, and the company's market strategy was to start at university. The account that carries that
+strategy is the professor, who builds the class kit every academic term.
 
 The product keeps that account buying, term after term. It hands the sales rep an account that has
 already been read, with the next action and the message ready, on the day the customer starts to

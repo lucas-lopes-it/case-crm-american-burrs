@@ -6,7 +6,8 @@
 
 ## Context
 
-American Burrs sells dental burs to dental schools. The decision maker is the professor, who builds
+American Burrs sells dental burs through dental distributors and builds academic kits with course
+professors. The decision maker is the professor, who builds
 the class kit every academic term. The ERP record can be under the school's name or the
 professor's.
 

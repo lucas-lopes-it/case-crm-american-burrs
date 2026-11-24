@@ -5,7 +5,8 @@ the code that rebuilds the logic is in this repository.
 
 ## The data already existed
 
-At American Burrs, a manufacturer of dental burs that sells to dental schools, the ERP already
+At American Burrs, a manufacturer of dental burs that sells through dental distributors and builds academic kits
+with course professors, the ERP already
 classified each customer by color, based on days since the last purchase. Green, yellow, red,
 black, purple. The traffic light was right and nobody checked it. At the same time, reps didn't
 like filling in the CRM, and the company was paying for two commercial tools to store data that
@@ -17,9 +18,10 @@ more information. What they lacked was the time to look at the information that 
 
 ## The bet behind the account
 
-American Burrs is an industry: it sells B2B to schools, technical courses and dental distributors,
-and the dentist is the end user the brand wants to win. Its market strategy was to build loyalty
-with the dentist from university onward. In practice, that strategy reaches the sales rep as one question: does this school still buy from us
+American Burrs is an industry: it sells through dental distributors, and its academic kits are
+developed with the professor of each course. The dentist is the end user the brand wants to win. Its
+market strategy was to build loyalty with the dentist from university onward. In practice, that
+strategy reaches the sales rep as one question: is this course still using our kit
 this term? An account that stays active term after term is how the strategy shows up in the rep's
 day.
 
