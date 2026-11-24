@@ -1,6 +1,6 @@
 # Customer Loyalty and Retention: Traffic Light + Kit CRM
 
-![The traffic light nobody checked: product case on AI for B2B sales](docs/img/capa.png)
+![The traffic light nobody checked: product case on customer loyalty and retention](docs/img/capa.png)
 
 > **Portfolio reconstruction.** The original system ran in production at American Burrs (dental
 > burs manufacturer, B2B sales to dental schools). This repository **contains no code, data,
