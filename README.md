@@ -1,4 +1,4 @@
-# Customer Health Traffic Light + Kit CRM
+# Customer Loyalty and Retention: Traffic Light + Kit CRM
 
 ![The traffic light nobody checked: product case on AI for B2B sales](docs/img/capa.png)
 
@@ -7,12 +7,17 @@
 > credentials or customer information** from the real environment. Customers, products, orders,
 > phone numbers and emails are fictional. The ERP (Sankhya on Oracle) is simulated.
 
-A product that hands the sales rep an account that has already been read, with the next action and
-the message ready, on the day the customer starts to cool down. The rep doesn't open a dashboard,
-doesn't fill in the CRM and doesn't build kits in a spreadsheet: they review and send.
+A customer loyalty strategy for B2B sales in dental education. The company's market strategy was to
+build loyalty with the dentist from university onward, and the account that carries that strategy
+is the professor, who builds the class kit every academic term. The product keeps that account
+buying, term after term: it hands the sales rep an account that has already been read, with the
+next action and the message ready, on the day the customer starts to cool down. The rep doesn't
+open a dashboard, doesn't fill in the CRM and doesn't build kits in a spreadsheet: they review and
+send.
 
-My role: AI Product Builder, owning the product end to end, from discovery to adoption. The full
-story, in first person, is in [docs/CASE.md](docs/CASE.md), and the PRD in [docs/PRD.md](docs/PRD.md).
+My role: Product Owner, owning the product end to end, from discovery to rollout and adoption, and
+AI Product Builder in this reconstruction. The full story, in first person, is in
+[docs/CASE.md](docs/CASE.md), and the PRD in [docs/PRD.md](docs/PRD.md).
 
 ![Customer traffic light with the briefing generated for an account in the red](docs/img/farol.png)
 
@@ -20,15 +25,18 @@ story, in first person, is in [docs/CASE.md](docs/CASE.md), and the PRD in [docs
 
 - **80% reduction in commercial tool costs at full rollout**, after over 60% at the MVP stage. One
   of the two licenses (CRM) was dropped first, and the kit builder validated replacing the other one
-  too (sales force automation), which was the more expensive of the two.
+  too (sales force automation), which was the more expensive of the two. Both paid tools were
+  replaced by our own CRM and sales force application, where the rep builds the kit.
+- **Adopted by the sales executives.** The product started in Lean Inception workshops with the
+  field team and was built and validated with them.
 - **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
   nobody checking it.
 - **Manual data entry ended.** Kit registration and validation now read straight from the ERP.
 
 ## The problem
 
-The ERP already classified every customer by color, based on days since the last purchase. The
-information was right and nobody used it. Reps didn't like filling in the CRM, and repurchase
+The ERP already segmented every customer by color, based on days since the last purchase (recency,
+the R of RFM). The information was right and nobody used it. Reps didn't like filling in the CRM, and repurchase
 opportunities slipped by without the rep or the leadership noticing.
 
 The obvious reading was adoption: train, enforce, build a better dashboard. The diagnosis was
@@ -60,7 +68,7 @@ use it did the CRM, pipeline and kit builder move to our own low-code applicatio
 
 | Phase | What shipped | What it validated |
 |---|---|---|
-| Discovery | Lean Inception | The professor as decision maker and the term-based buying cycle |
+| Discovery | Lean Inception workshops with the field team | The professor as decision maker and the term-based buying cycle |
 | MVP | Traffic light and briefing on top of a market CRM, with integrations built from scratch | Whether reps act on a ready-made briefing |
 | Own product | CRM, pipeline and kit builder in our own low-code application | That the CRM license could be dropped and the sales force tool replaced |
 | Public reconstruction | Rules in code, tests and AI evals, with fictional data | That the product rules are testable and versioned |
@@ -112,7 +120,8 @@ and fallback, evals with a rubric and history per prompt version.
 **Next**
 - Prompt v2 with a different tone for anticipation (red) and win-back (black), compared with v1 in
   the evals.
-- Daily queue ranked by revenue over the last 12 months, so the rep knows where to start.
+- Daily queue ranked by revenue over the last 12 months (the M of RFM), so the rep knows where to
+  start.
 - Recording the difference between the draft and the sent text, to measure edits.
 
 **Later**

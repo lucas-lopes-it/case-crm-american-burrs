@@ -15,6 +15,14 @@ When I took on the digital transformation, the obvious reading was adoption: tra
 a better dashboard. It took me a while to see that the problem was something else. No rep needed
 more information. What they lacked was the time to look at the information that was already there.
 
+## The bet behind the account
+
+American Burrs' market strategy was to build loyalty with the dentist from university onward. In
+practice, that strategy reaches the sales rep as one question: does this school still buy from us
+this term? An account that stays active term after term is how the strategy shows up in the rep's
+day, which is why I treated retention of the academic account as the core of the product, not as a
+side feature of the CRM.
+
 ## What Herbert Simon had already written in 1971
 
 Herbert Simon, who would later win the Nobel Prize in economics, described this problem in a talk
@@ -31,8 +39,8 @@ action.
 
 ## First, understand the buyer's cycle
 
-In discovery I found that the decision maker is not the school, it is the professor. Every academic
-term they build the bur kit for their class. That gave meaning to the colors: green and yellow
+In discovery, through Lean Inception workshops with the field team, we found that the decision maker
+is not the school, it is the professor. Every academic term they build the bur kit for their class. That gave meaning to the colors: green and yellow
 cover the current term, red is the window before the next kit, black is the professor who has
 already skipped a cycle.
 
@@ -58,12 +66,15 @@ for the whole class and a cost ceiling per student.
 
 I validated the hypothesis first on an off-the-shelf CRM, to save time, and built the integrations
 from scratch instead of paying for ready-made ones. Only after seeing reps use it did I move the
-CRM, pipeline and kit builder into our own low-code application.
+CRM, pipeline and kit builder into our own low-code application, built and validated together with
+the field team and adopted by the sales executives.
 
 The result was over 60% reduction in commercial tool costs at the MVP stage, and 80% at full
 rollout. One of the two licenses was dropped first, and the kit builder validated replacing the
-other one too, which was the more expensive. The
-traffic light started to drive the rep's routine, and manual data entry ended.
+other one too, which was the more expensive. Both paid tools gave way to our own CRM and sales force
+application, where the rep builds the kit. The traffic light started to drive the rep's routine,
+and manual data entry ended. The north star I defined is repurchase in the following term, which is
+not instrumented yet.
 
 ## The line I would take to any meeting
 
