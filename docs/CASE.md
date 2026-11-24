@@ -38,9 +38,9 @@ action.
 
 ## First, understand the buyer's cycle
 
-In discovery, through Lean Inception workshops with the field team, we found that the decision maker
-is not the school, it is the professor. Every academic term they build the bur kit for their class.
-That gave meaning to the colors: green and yellow cover the current term, red is the window before
+In discovery, through a Lean Inception across four business areas with the field team at the
+table, we found that the decision maker is not the school, it is the professor. Every academic term
+they build the bur kit for their class. That gave meaning to the colors: green and yellow cover the current term, red is the window before
 the next kit, black is the professor who has already skipped a cycle.
 
 With that, the question changed. It was no longer "how do we get the rep to look at the traffic

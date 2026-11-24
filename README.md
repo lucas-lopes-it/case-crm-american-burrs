@@ -27,10 +27,10 @@ PRD in [docs/PRD.md](docs/PRD.md).
 - **80% reduction in commercial tool costs at full rollout**, after over 60% at the MVP stage. One
   of the two licenses (CRM) was dropped first, and the kit builder validated replacing the other one
   too (sales force automation), which was the more expensive of the two.
-- **Adopted by the sales executives, and used day to day.** The product started in Lean Inception
-  workshops with the field team and was built and validated with them, around their own pains:
-  filling in the CRM by hand, repetitive funnel steps, and analyzing accounts in the ERP while on
-  the road.
+- **Adopted by the sales executives, and used day to day.** The product started in a Lean
+  Inception across four business areas, with the field team at the table, and was built and
+  validated with that team around their own pains: filling in the CRM by hand, repetitive funnel
+  steps, and analyzing accounts in the ERP while on the road.
 - **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
   nobody checking it.
 - **Manual data entry ended.** Kit registration and validation now read straight from the ERP.
@@ -70,7 +70,7 @@ use it did the CRM, pipeline and kit builder move to our own low-code applicatio
 
 | Phase | What shipped | What it validated |
 |---|---|---|
-| Discovery | Lean Inception workshops with the field team | The professor as decision maker and the term-based buying cycle |
+| Discovery | Lean Inception across four business areas, with the field team | The professor as decision maker and the term-based buying cycle |
 | MVP | Traffic light and briefing on top of a market CRM, with integrations built from scratch | Whether reps act on a ready-made briefing |
 | Own product | CRM, pipeline and kit builder in our own low-code application | That the CRM license could be dropped and the sales force tool replaced |
 | Public reconstruction | Rules in code, tests and AI evals, with fictional data | That the product rules are testable and versioned |

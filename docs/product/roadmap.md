@@ -12,7 +12,7 @@ The original system ran at American Burrs. These phases happened there and have 
 
 | Phase | What shipped | What it validated |
 |---|---|---|
-| Discovery | Lean Inception with the business areas | The professor as decision maker and the term-based cycle |
+| Discovery | Lean Inception across four business areas | The professor as decision maker and the term-based cycle |
 | MVP | Traffic light and briefing on top of a market CRM, with integrations built from scratch | That reps act on a ready-made briefing |
 | Own product | CRM, pipeline and kit builder in our own low-code application | Over 60% reduction in commercial tool costs at the MVP stage, 80% at full rollout |
 
