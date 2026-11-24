@@ -5,8 +5,8 @@ the product serves a Brazilian sales team; the code term is shown in parentheses
 
 ## Business
 
-**Dental schools.** Universities and dentistry courses. The market served by the sales operation in
-this case.
+**Dental schools.** Universities and dentistry courses. The academic market worked by the sales
+operation in this case, where the professor defines the kit that students use and distributors sell.
 
 **Professor.** The decision maker. Builds the bur kit for the class every academic term.
 
