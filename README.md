@@ -16,9 +16,9 @@ already been read, with the next action and the message ready, on the day the cu
 cool down. The rep doesn't open a dashboard, doesn't fill in the CRM and doesn't build kits in a
 spreadsheet: they review and send.
 
-My role: Product Owner, owning the product end to end, from discovery to rollout and adoption, and
-AI Product Builder in this reconstruction. The full story, in first person, is in
-[docs/CASE.md](docs/CASE.md), and the PRD in [docs/PRD.md](docs/PRD.md).
+My role: AI Product Builder and Product Manager, owning the product end to end, from discovery to
+rollout and adoption. The full story, in first person, is in [docs/CASE.md](docs/CASE.md), and the
+PRD in [docs/PRD.md](docs/PRD.md).
 
 ![Customer traffic light with the briefing generated for an account in the red](docs/img/farol.png)
 
@@ -27,8 +27,10 @@ AI Product Builder in this reconstruction. The full story, in first person, is i
 - **80% reduction in commercial tool costs at full rollout**, after over 60% at the MVP stage. One
   of the two licenses (CRM) was dropped first, and the kit builder validated replacing the other one
   too (sales force automation), which was the more expensive of the two.
-- **Adopted by the sales executives.** The product started in Lean Inception workshops with the
-  field team and was built and validated with them.
+- **Adopted by the sales executives, and used day to day.** The product started in Lean Inception
+  workshops with the field team and was built and validated with them, around their own pains:
+  filling in the CRM by hand, repetitive funnel steps, and analyzing accounts in the ERP while on
+  the road.
 - **The traffic light started to drive the rep's routine**, after years sitting in the ERP with
   nobody checking it.
 - **Manual data entry ended.** Kit registration and validation now read straight from the ERP.
