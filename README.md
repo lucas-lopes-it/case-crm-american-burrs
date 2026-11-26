@@ -92,7 +92,7 @@ use it did the CRM, pipeline and kit builder move to our own low-code applicatio
 
 - **Automatic sending.** The AI sends nothing on its own. The speed gain didn't outweigh the risk
   of a wrong message reaching a professor.
-- **Discounts or commercial terms.** Reps didn't have that authority, so the product doesn't either.
+- **Discounts or commercial terms.** Pricing ran through approval tiers and case by case review, a negotiation rather than a rule, so the product kept price out and retention came from timing.
 - **Predictive churn score.** The days-since-last-purchase rule was already understood and accepted
   by sales. Replacing it with an opaque model would have cost the trust the traffic light needed to
   earn.
